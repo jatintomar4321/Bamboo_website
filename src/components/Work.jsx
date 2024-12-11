@@ -63,7 +63,7 @@ const Work = () => {
   const memoizedProjects = useMemo(() => projects, [])
 
   return (
-    <section className="min-h-screen bg-white px-4 md:px-8 py-10 md:py-12">
+    <section className="min-h-screen bg-white px-4 sm:px-6 md:px-8 py-10 md:py-12">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -71,39 +71,41 @@ const Work = () => {
         variants={containerVariants}
         className="max-w-[2000px] mx-auto"
       >
-        <div className="flex justify-between items-baseline border-b-2 mb-10">
+        <div className="flex flex-col sm:flex-row justify-between items-baseline border-b-2 mb-6 sm:mb-10 pb-4 sm:pb-6">
           <motion.h2
             variants={itemVariants}
-            className="text-[12rem] md:text-[13rem] font-[500]"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-[500] mb-2 sm:mb-0"
           >
             Work
           </motion.h2>
-          <motion.div
-            variants={itemVariants}
-            className="flex items-center gap-8"
-          >
-            <span className="text-sm">(2014-2024)</span>
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <a 
-              href="/work"
-              className="text-sm underline hover:opacity-70 transition-opacity"
+          <div className="flex flex-col sm:flex-row  w-1/2 justify-between   items-start sm:items-center gap-2 sm:gap-8">
+            <motion.span
+              variants={itemVariants}
+              className="text-sm  sm:text-lg"
             >
-              View All
-            </a>
-          </motion.div>
+              (2014-2024)
+            </motion.span>
+            <motion.div variants={itemVariants}>
+              <a 
+                href="/work"
+                className="text-sm sm:text-lg underline hover:opacity-70 transition-opacity"
+              >
+                View All
+              </a>
+            </motion.div>
+          </div>
         </div>
 
-        <div className='flex justify-end mx-20'>
+        <div className='flex justify-start sm:justify-end mx-0 sm:mx-4 md:mx-8 lg:mx-12 xl:mx-20 mb-8 sm:mb-12 md:mb-16'>
           <motion.p
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-[500] leading-tight mb-16 md:mb-24 max-w-2xl"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-[500] leading-tight max-w-2xl"
           >
             We help brands grow and tell their stories to the world
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {memoizedProjects.map((project) => (
             <motion.div
               key={project.id}
@@ -111,15 +113,15 @@ const Work = () => {
               className="group"
             >
               <a href={`/work/${project.id}`}>
-                <div className="relative aspect-[16/9] overflow-hidden mb-4">
+                <div className="relative aspect-[16/9] overflow-hidden mb-2 sm:mb-4">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-xl font-light">{project.title}</h3>
-                <p className="text-sm text-gray-600">{project.category}</p>
+                <h3 className="text-lg sm:text-xl font-light">{project.title}</h3>
+                <p className="text-xs sm:text-sm text-gray-600">{project.category}</p>
               </a>
             </motion.div>
           ))}
