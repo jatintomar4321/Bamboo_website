@@ -1,45 +1,46 @@
-import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const MobileMenu = ({ isOpen, onClose }) => {
   const menuVariants = {
     closed: {
-      x: "100%",
+      x: '100%',
       transition: {
-        type: "tween",
+        type: 'tween',
         duration: 0.6,
-        when: "afterChildren"
-      }
+        when: 'afterChildren',
+      },
     },
     open: {
       x: 0,
       transition: {
-        type: "tween",
+        type: 'tween',
         duration: 0.6,
-        when: "beforeChildren"
-      }
-    }
-  }
+        when: 'beforeChildren',
+      },
+    },
+  };
 
   const itemVariants = {
     closed: { opacity: 0, x: 20 },
-    open: i => ({
+    open: (i) => ({
       opacity: 1,
       x: 0,
       transition: {
         delay: i * 0.1,
-        duration: 0.6
-      }
-    })
-  }
+        duration: 0.6,
+      },
+    }),
+  };
 
-  const menuItems = ['Work', 'About', 'News', 'Contact']
-  const socialItems = ['Instagram', 'Facebook', 'Youtube', 'Tiktok']
+  const menuItems = ['Work', 'About', 'News', 'Contact'];
+  const socialItems = ['Instagram', 'Facebook', 'Youtube', 'Tiktok'];
 
   return (
     <motion.div
       initial="closed"
-      animate={isOpen ? "open" : "closed"}
+      animate={isOpen ? 'open' : 'closed'}
       variants={menuVariants}
       className="fixed inset-0 bg-black z-50 overflow-hidden"
     >
@@ -55,15 +56,19 @@ const MobileMenu = ({ isOpen, onClose }) => {
 
         <nav className="flex-1 flex flex-col justify-center">
           {menuItems.map((item, i) => (
-            <motion.a
+            <motion.div
               key={item}
-              href={`/${item.toLowerCase()}`}
               custom={i}
               variants={itemVariants}
-              className="text-white text-6xl md:text-7xl font-light py-4 hover:opacity-70 transition-opacity"
+              className="py-4"
             >
-              {item}
-            </motion.a>
+              <Link
+                to={`/${item.toLowerCase()}`}
+                className="text-white text-6xl md:text-7xl font-light hover:opacity-70 transition-opacity"
+              >
+                {item}
+              </Link>
+            </motion.div>
           ))}
         </nav>
 
@@ -75,7 +80,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
           >
             Social
           </motion.div>
-          
+
           {socialItems.map((item, i) => (
             <motion.a
               key={item}
@@ -93,8 +98,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default MobileMenu
-
+export default MobileMenu;
