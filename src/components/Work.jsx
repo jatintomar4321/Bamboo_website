@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Link } from 'react-router-dom'
 
 const projects = [
   {
@@ -96,12 +97,12 @@ const Work = () => {
               (2014-2024)
             </motion.span>
             <motion.div variants={itemVariants}>
-              <a 
-                href="/work"
-                className="text-sm sm:text-lg underline hover:opacity-70 transition-opacity"
-              >
-                View All
-              </a>
+            <Link 
+              to="/work"
+              className="text-sm underline hover:opacity-70 transition-opacity"
+            >
+              View All
+            </Link>
             </motion.div>
           </div>
         </div>

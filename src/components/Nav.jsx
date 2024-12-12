@@ -1,40 +1,87 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 import MobileMenu from './MobileMenu'
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isOverWhite, setIsOverWhite] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const navRef = useRef(null)
+  const location = useLocation()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      setIsScrolled(scrollPosition > 50)
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsOverWhite(true)
+        } else {
+          setIsOverWhite(false)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (navRef.current) {
+      observer.observe(navRef.current)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      if (navRef.current) {
+        observer.unobserve(navRef.current)
+      }
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const isHomePage = location.pathname === '/'
+
+  const navItemClass = `transition-colors duration-300 ${
+    (isOverWhite && !isHomePage) || (isHomePage && isScrolled) ? 'text-black' : 'text-white'
+  } hover:opacity-80`
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 bg-transparent">
+      <nav 
+        ref={navRef} 
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white bg-opacity-35 shadow-md' : 'bg-transparent'
+        }`}
+      >
         <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
-          <a href="/" className="text-white text-xl md:text-2xl font-light">
+          <Link to="/" className={`text-xl md:text-2xl font-light ${navItemClass}`}>
             Luminous
-          </a>
+          </Link>
           
           <div className="hidden md:flex items-center gap-8">
-            <span className="text-white text-sm">©2024</span>
+            <span className={navItemClass}>©2024</span>
             <div className="flex items-center gap-8">
-              <a href="/work" className="text-white hover:opacity-80 transition-opacity">
+              <Link to="/work" className={navItemClass}>
                 Work
-              </a>
-              <a href="/about" className="text-white hover:opacity-80 transition-opacity">
+              </Link>
+              <Link to="/about" className={navItemClass}>
                 About
-              </a>
-              <a href="/news" className="text-white hover:opacity-80 transition-opacity">
+              </Link>
+              <Link to="/news" className={navItemClass}>
                 News
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="/contact" className="hidden md:block text-white hover:opacity-80 transition-opacity">
+            <Link to="/contact" className={`hidden md:block ${navItemClass}`}>
               Contact
-            </a>
+            </Link>
             <button
               onClick={() => setIsMenuOpen(true)}
-              className="md:hidden text-white hover:opacity-80 transition-opacity"
+              className={`md:hidden ${navItemClass}`}
               aria-label="Open menu"
             >
               <Menu size={24} />

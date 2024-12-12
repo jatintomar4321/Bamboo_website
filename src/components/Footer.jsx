@@ -1,70 +1,85 @@
+import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
-import { Link } from "react-router-dom"
 
-export default function Footer() {
+const Footer = () => {
+  const mainLinks = ['Work', 'About', 'News', 'Contact']
+  const socialLinks = ['Instagram', 'Facebook', 'Tiktok', 'Youtube']
+  const bottomLinks = ['More Template', 'Licenses', 'Changelog', 'Style Guide', 'Webflow']
+
   return (
-    <footer className="w-full">
-      {/* Top Section */}
-      <div className="container mx-auto px-4 py-8 flex justify-between items-start">
-        {/* Logo */}
-        <div>
-          <Link to="/" className="text-xl font-serif">
-            Luminous
-          </Link>
-        </div>
-
-        {/* Navigation */}
-        <nav className="flex flex-col space-y-4 text-4xl font-medium">
-          <Link to="/work">Work</Link>
-          <Link to="/about">About</Link>
-          <Link to="/news">News</Link>
-          <Link to="/contact">Contact</Link>
-        </nav>
-
-        {/* Social Links */}
-        <div className="flex flex-col space-y-4">
-          <h3 className="text-lg font-medium">Social</h3>
-          <div className="flex flex-col space-y-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">
-              Instagram
-              <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">
-              Facebook
-              <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">
-              Tiktok
-              <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">
-              Youtube
-              <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+    <footer className="bg-white pt-40">
+      <div className="max-w-[2000px] mx-auto px-4 md:px-8 border-t-2 py-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-9 mb-60">
+          {/* Logo */}
+          <div>
+            <a href="/" className="text-2xl font-light">
+              Bamboo
             </a>
           </div>
-        </div>
-      </div>
 
-      {/* Let's Chat Section */}
-      <div className="container mx-auto px-4 py-16">
-        <p className="text-lg">Interested in working with us?</p>
-        <Link to="/contact" className="block text-[8rem] font-medium hover:opacity-80 transition-opacity">
-          Let's Chat
-        </Link>
-      </div>
+          {/* Main Navigation */}
+          <nav className="flex flex-col items-start text-3xl tracking-tight md:text-6xl font-[450]">
+            {mainLinks.map((link) => (
+              <a
+                key={link}
+                href={`/${link.toLowerCase()}`}
+                className="relative group"
+              >
+                {link}
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 ease-out group-hover:w-full" />
+              </a>
+            ))}
+          </nav>
 
-      {/* Bottom Links */}
-      <div className="container mx-auto px-4 py-4 border-t flex justify-between items-center text-sm">
-        <Link to="/template">More Template</Link>
-        <div className="flex space-x-6">
-          <Link to="/licenses">Licenses</Link>
-          <Link to="/changelog">Changelog</Link>
-          <Link to="/style-guide">Style Guide</Link>
-          <Link to="/webflow">Webflow</Link>
+          {/* Social Links */}
+          <div className="space-y-0">
+            <h3 className="text-xl font-light">Social</h3>
+            <div className="flex flex-col space-y-0">
+              {socialLinks.map((social) => (
+                <a
+                  key={social}
+                  href={`https://${social.toLowerCase()}.com`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between py-2 px-3 -mx-3 group transition-colors duration-300 hover:bg-black"
+                >
+                  <span className="text-lg group-hover:text-white transition-colors duration-300">
+                    {social}
+                  </span>
+                  <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-        <span>©2024</span>
+
+        {/* Call to Action */}
+        <div className="mb-4">
+          <p className="text-xl mb-4">Interested in working with us?</p>
+          <a href="/contact" className="text-6xl md:text-[12rem]  font-[500] border-black ease-out hover:border-b-4 duration-300 ">
+            Let's Chat
+          </a>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-8 border-t border-gray-200">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 mb-4 md:mb-0">
+            {bottomLinks.map((link) => (
+              <a
+                key={link}
+                href={`/${link.toLowerCase().replace(' ', '-')}`}
+                className="text-sm hover:opacity-70 transition-opacity"
+              >
+                {link}
+              </a>
+            ))}
+          </div>
+          <span className="text-sm">©2024</span>
+        </div>
       </div>
     </footer>
   )
 }
+
+export default Footer
 
