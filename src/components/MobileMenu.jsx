@@ -64,6 +64,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             >
               <Link
                 to={`/${item.toLowerCase()}`}
+                onClick={onClose} // Close the sidebar after clicking
                 className="text-white text-6xl md:text-7xl font-light hover:opacity-70 transition-opacity"
               >
                 {item}
