@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 import MobileMenu from './MobileMenu'
@@ -42,9 +42,10 @@ const Nav = () => {
   }, [])
 
   const isHomePage = location.pathname === '/'
+  const shouldUseDarkTheme = (isOverWhite && !isHomePage) || (isHomePage && isScrolled)
 
   const navItemClass = `transition-colors duration-300 ${
-    (isOverWhite && !isHomePage) || (isHomePage && isScrolled) ? 'text-black' : 'text-white'
+    shouldUseDarkTheme ? 'text-black' : 'text-white'
   } hover:opacity-80`
 
   return (
@@ -57,7 +58,11 @@ const Nav = () => {
       >
         <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
           <Link to="/" className={`text-xl md:text-2xl font-light ${navItemClass}`}>
-            Luminous
+            <img
+              src={shouldUseDarkTheme ? "./darkLogo.svg" : "./whiteLogo.svg"}
+              alt="Logo"
+              className="h-10 object-contain w-44 transition-opacity duration-300"
+            />
           </Link>
           
           <div className="hidden md:flex items-center gap-8">

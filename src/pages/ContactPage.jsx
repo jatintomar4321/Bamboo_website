@@ -52,7 +52,7 @@ const ContactPage = () => {
     <section className="min-h-screen bg-white">
       <motion.h1
         variants={itemVariants}
-        className="text-[7rem] md:text-[9rem] lg:text-[13rem] font-[500] border-b-2 px-2 pt-2 pb-8 md:pb-10 lg:pb-40"
+        className="text-[6rem] md:text-[9rem] lg:text-[13rem] font-[500] border-b-2  px-2 pt-6 pb-8 md:pb-10 lg:pb-40"
       >
         Contact
       </motion.h1>
