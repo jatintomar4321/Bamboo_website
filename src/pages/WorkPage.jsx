@@ -74,7 +74,7 @@ const WorkPage = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-[9rem] md:text-[12rem] font-light pb-52 border-b-2"
+          className="text-[9rem] md:text-[12rem] font-light pb-6 md:pb-52 pt-10 border-b-2"
         >
           Work
         </motion.h2>
