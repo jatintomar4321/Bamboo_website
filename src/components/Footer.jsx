@@ -9,11 +9,15 @@ const Footer = () => {
   return (
     <footer className="bg-white pt-40">
       <div className="max-w-[2000px] mx-auto px-4 md:px-8 border-t-2 py-2">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-9 mb-60">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-9 mb-10 md:mb-60 ">
           {/* Logo */}
           <div>
             <a href="/" className="text-2xl font-light">
-              Bamboo
+              <img
+              src="./darkLogo.svg" 
+              alt="Logo"
+              className="h-10 object-contain w-44 transition-opacity duration-300"
+            />
             </a>
           </div>
 
@@ -54,7 +58,7 @@ const Footer = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mb-4">
+        <div className="mb-4 ">
           <p className="text-xl mb-4">Interested in working with us?</p>
           <a href="/contact" className="text-6xl md:text-[12rem]  font-[500] border-black ease-out hover:border-b-4 duration-300 ">
             Let's Chat
@@ -62,7 +66,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-8 border-t border-gray-200">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-3 border-t border-gray-200">
+        <div>
+        <img
+              src="./fullLogo.svg"
+              alt="Logo"
+              className="h-10 object-contain w-44 transition-opacity duration-300"
+            />
+        </div>
           <div className="flex flex-wrap gap-x-8 gap-y-4 mb-4 md:mb-0">
             {bottomLinks.map((link) => (
               <a
