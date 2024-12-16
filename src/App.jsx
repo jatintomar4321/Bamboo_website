@@ -1,25 +1,22 @@
-"use client"
-
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import SvgShuffleLoader from "./pages/SvgShuffleLoader"
 import Nav from './components/Nav'
-import Hero from './components/Hero'
-import About from './components/About'
-import Work from './components/Work'
 import Footer from './components/Footer'
+import HomePage from "./pages/HomePage"
 import WorkPage from './pages/WorkPage'
 import ContactPage from './pages/ContactPage'
+import DeepaGurmani from './pages/DeepaGurmani'
 
-export default function Layout() {
+const AppContent = () => {
   const [isLoading, setIsLoading] = useState(true)
+  const location = useLocation()
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 5000) // 3 seconds for demonstration
+    }, 6000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -45,21 +42,16 @@ export default function Layout() {
             transition={{ duration: 0.5 }}
             className="flex-grow"
           >
-            <Router>
-              <Nav />
-              <Routes>
-                <Route path="/" element={
-                  <main>
-                    <Hero />
-                    <About />
-                    <Work />
-                  </main>
-                } />
+            <Nav />
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<HomePage />} />
                 <Route path="/work" element={<WorkPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/work/:id" element={<DeepaGurmani />} />
               </Routes>
-              <Footer />
-            </Router>
+            </AnimatePresence>
+            <Footer />
           </motion.div>
         )}
       </AnimatePresence>
@@ -67,3 +59,10 @@ export default function Layout() {
   )
 }
 
+export default function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  )
+}

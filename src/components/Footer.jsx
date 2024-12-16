@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <a href="/" className="text-2xl font-light">
               <img
-              src="./darkLogo.svg" 
+              src="/darkLogo.svg" 
               alt="Logo"
               className="h-10 object-contain w-44 transition-opacity duration-300"
             />
@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-3 border-t border-gray-200">
         <div>
         <img
-              src="./fullLogo.svg"
+              src="/fullLogo.svg"
               alt="Logo"
               className="h-10 object-contain w-44 transition-opacity duration-300"
             />

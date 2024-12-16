@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const projects = [
   {
@@ -27,7 +28,42 @@ const projects = [
     category: "Web Design",
     image: "/4.jpg",
   },
-  // Add more projects as needed
+  {
+    id: 5,
+    title: "Digital Agency",
+    category: "Web Design",
+    image: "/4.jpg",
+  },
+  {
+    id: 6,
+    title: "Digital Agency",
+    category: "Web Design",
+    image: "/4.jpg",
+  },
+  {
+    id: 7,
+    title: "Digital Agency",
+    category: "Web Design",
+    image: "/4.jpg",
+  },
+  {
+    id: 8,
+    title: "Digital Agency",
+    category: "Web Design",
+    image: "/4.jpg",
+  },
+  {
+    id: 9,
+    title: "Digital Agency",
+    category: "Web Design",
+    image: "/4.jpg",
+  },
+  {
+    id: 10,
+    title: "Digital Agency",
+    category: "Web Design",
+    image: "/4.jpg",
+  },
 ]
 
 const WorkPage = () => {
@@ -79,7 +115,6 @@ const WorkPage = () => {
           Work
         </motion.h2>
 
-
         <div className="grid grid-cols-1 md:grid-cols-2 pt-10 gap-8">
           {projects.map((project) => (
             <motion.div
@@ -87,7 +122,7 @@ const WorkPage = () => {
               variants={itemVariants}
               className="group"
             >
-              <a href={`/work/${project.id}`}>
+              <Link to={`/work/${project.id}`}>
                 <div className="relative aspect-[4/3] overflow-hidden mb-4">
                   <img
                     src={project.image}
@@ -97,7 +132,7 @@ const WorkPage = () => {
                 </div>
                 <h3 className="text-xl font-light">{project.title}</h3>
                 <p className="text-sm text-gray-600">{project.category}</p>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -107,4 +142,3 @@ const WorkPage = () => {
 }
 
 export default WorkPage
-

@@ -1,34 +1,38 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import { motion, useAnimation, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 
 const projects = [
   {
     id: 1,
-    title: "Shaun Park Website",
+    title: "Deepa Gurnani",
     category: "Visual Identity",
     image: "/1.jpg",
+    hoverImage: "/4.jpg",
   },
   {
     id: 2,
-    title: "Jimmy Wood Portfolio",
-    category: "Visual Identity",
+    title: "Ace Blend",
+    category: "Visual Identity and Tech",
     image: "/2.jpg",
+    hoverImage: "/2-hover.jpg",
   },
   {
     id: 3,
-    title: "Creative Studio",
-    category: "Brand Strategy",
+    title: "RAF",
+    category: "UIUX & Website",
     image: "/3.jpg",
+    hoverImage: "/3-hover.jpg",
   },
   {
     id: 4,
-    title: "Digital Agency",
-    category: "Web Design",
+    title: "Homes to Life ",
+    category: "Performance Marketing and Visual Communication Video ",
     image: "/4.jpg",
+    hoverImage: "/4-hover.jpg",
   },
 ]
 
@@ -55,23 +59,75 @@ const itemVariants = {
   }
 }
 
+const curtainVariants = {
+  closed: { clipPath: 'inset(0% 0% 0% 100%)' ,
+    transition: { duration: 1, ease: 'easeInOut' }
+  },
+  open: { 
+    clipPath: 'inset(0 0 0 0%)',
+    transition: { duration: 1, ease: 'easeInOut' }
+  }
+}
+
 const Work = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   })
   const controls = useAnimation()
-  const [isFirstRowLoaded, setIsFirstRowLoaded] = useState(false)
 
   useEffect(() => {
     if (inView) {
       controls.start("visible")
-      setTimeout(() => setIsFirstRowLoaded(true), 1000) // Delay second row animation
     }
   }, [inView, controls])
 
-  const firstRowProjects = projects.slice(0, 2)
-  const secondRowProjects = projects.slice(2)
+  const ProjectCard = ({ project }) => {
+    const [isHovered, setIsHovered] = useState(false)
+    const curtainControls = useAnimation()
+
+    useEffect(() => {
+      if (isHovered) {
+        curtainControls.start("open")
+      } else {
+        curtainControls.start("closed")
+      }
+    }, [isHovered, curtainControls])
+
+    return (
+      <motion.div
+        key={project.id}
+        variants={itemVariants}
+        className="group relative overflow-hidden"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <Link to={`/work/${project.id}`}>
+          <div className="relative aspect-[16/9] overflow-hidden mb-2 sm:mb-4">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+            <motion.div
+              className="absolute inset-0"
+              variants={curtainVariants}
+              initial="closed"
+              animate={curtainControls}
+            >
+              <img
+                src={project.hoverImage}
+                alt={`${project.title} hover`}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+          <h3 className="text-lg sm:text-xl font-light">{project.title}</h3>
+          <p className="text-xs sm:text-sm text-gray-600">{project.category}</p>
+        </Link>
+      </motion.div>
+    )
+  }
 
   return (
     <section className="min-h-screen bg-white px-4 sm:px-6 md:px-8 py-10 md:py-12">
@@ -97,12 +153,12 @@ const Work = () => {
               (2014-2024)
             </motion.span>
             <motion.div variants={itemVariants}>
-            <Link 
-              to="/work"
-              className="text-sm underline hover:opacity-70 transition-opacity"
-            >
-              View All
-            </Link>
+              <Link 
+                to="/work"
+                className="text-sm underline hover:opacity-70 transition-opacity"
+              >
+                View All
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -117,55 +173,10 @@ const Work = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-          {firstRowProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={itemVariants}
-              className="group"
-            >
-              <a href={`/work/${project.id}`}>
-                <div className="relative aspect-[16/9] overflow-hidden mb-2 sm:mb-4">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-lg sm:text-xl font-light">{project.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-600">{project.category}</p>
-              </a>
-            </motion.div>
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-
-        {isFirstRowLoaded && (
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6"
-          >
-            {secondRowProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                className="group"
-              >
-                <a href={`/work/${project.id}`}>
-                  <div className="relative aspect-[16/9] overflow-hidden mb-2 sm:mb-4">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-light">{project.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-600">{project.category}</p>
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
       </motion.div>
     </section>
   )

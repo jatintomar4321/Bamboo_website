@@ -53,7 +53,7 @@ const Hero = () => {
         
         <div className="max-w-[2000px] mx-auto w-full px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 md:pb-16 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 sm:gap-6">
           <span className={`text-white text-base sm:text-lg ${getAnimationClass('delay-500')}`}>
-            London / UK
+          India/Mumbai
           </span>
           <p className={`text-white max-w-md text-base sm:text-lg ${getAnimationClass('delay-700')}`}>
             A strategic social media and marketing studio with a common vision of using social media to connect clients with their audiences

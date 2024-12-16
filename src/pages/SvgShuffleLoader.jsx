@@ -1,7 +1,7 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import React, { useEffect, useState } from "react"
 
 export default function SvgShuffleLoader() {
   const [positions, setPositions] = useState([0, 1, 2, 3])
@@ -23,7 +23,7 @@ export default function SvgShuffleLoader() {
       setProgress(prevProgress => {
         if (prevProgress >= 100) {
           clearInterval(progressInterval)
-          return 100
+          return 1000
         }
         return prevProgress + 1
       })
