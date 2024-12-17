@@ -53,23 +53,22 @@ const About = () => {
             variants={itemVariants}
             className="text-3xl md:text-5xl lg:text-6xl font-[500] leading-tight lg:col-span-2"
           >
-            We are a team of creative professionals dedicated to helping businesses thrive in today's competitive market. With our expertise in design and marketing strategies, we aim to create impactful campaigns that drive results and improve brand visibility. At our agency, we understand the importance of effective design in capturing the attention of your target audience
-          </motion.p>
+We are a team of creative professionals dedicated to helping businesses thrive in today's competitive market. With our expertise in design and marketing strategies, we aim to create impactful campaigns that drive results and improve brand visibility. At our agency, we understand the importance of effective design in capturing the attention of your target audience
+</motion.p>
 
           <div className="space-y-8 md:space-y-12 w-96 tracking-[-0.06rem] lg:col-start-2 lg:row-start-2">
             <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl font-light"
             >
-              But it's not just about creating visually appealing designs. We believe in the power of strategic marketing to help businesses reach their goals. Our team of marketing experts will collaborate with you to develop tailored strategies that effectively communicate your unique value proposition, engage your audience, and drive conversions
-            </motion.p>
+              But it's not just about creating visually appealing designs. We believe in the power of strategic marketing to help businesses reach their goals. Our team of marketing experts will collaborate with you to develop tailored strategies that effectively communicate your unique value proposition, engage your audience, and drive conversions           
+               </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl font-light"
             >
-              We take pride in delivering exceptional results that go beyond aesthetics, helping you achieve sustainable growth and business success
-            </motion.p>
+                We take pride in delivering exceptional results that go beyond aesthetics, helping you achieve sustainable growth and business success            </motion.p>
 
             <motion.a
               variants={itemVariants}

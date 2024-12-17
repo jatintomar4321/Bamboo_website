@@ -6,63 +6,105 @@ import { Link } from 'react-router-dom'
 const projects = [
   {
     id: 1,
-    title: "Shaun Park Website",
+    title: "Renu Oberoi",
     category: "Visual Identity",
-    image: "/1.jpg",
+    image: "/1.png",
   },
   {
     id: 2,
-    title: "Jimmy Wood Portfolio",
+    title: "Deepa Gurnani",
     category: "Visual Identity",
-    image: "/2.jpg",
+    image: "/2.png",
   },
   {
     id: 3,
-    title: "Creative Studio",
+    title: "RAF Clothing",
     category: "Brand Strategy",
-    image: "/3.jpg",
+    image: "/3.png",
   },
   {
     id: 4,
-    title: "Digital Agency",
+    title: "Ace Blend",
     category: "Web Design",
-    image: "/4.jpg",
+    image: "/4.png",
   },
   {
     id: 5,
-    title: "Digital Agency",
+    title: "Wearanemoia",
     category: "Web Design",
-    image: "/4.jpg",
+    image: "/123.png",
   },
   {
     id: 6,
-    title: "Digital Agency",
+    title: "Soujanya",
     category: "Web Design",
-    image: "/4.jpg",
+    image: "/soj.png",
   },
   {
     id: 7,
-    title: "Digital Agency",
+    title: "Fine Arts",
     category: "Web Design",
-    image: "/4.jpg",
+    image: "/fine.png",
   },
   {
     id: 8,
-    title: "Digital Agency",
+    title: "So Quod",
     category: "Web Design",
-    image: "/4.jpg",
+    image: "/SO.png",
   },
   {
     id: 9,
-    title: "Digital Agency",
+    title: "Skift ",
     category: "Web Design",
-    image: "/4.jpg",
+    image: "/skifit.png",
   },
   {
     id: 10,
-    title: "Digital Agency",
+    title: "Atelier",
     category: "Web Design",
-    image: "/4.jpg",
+    image: "/atelier.png",
+  },
+  {
+    id: 11,
+    title: "The Artist ",
+    category: "Web Design",
+    image: "/artist.png",
+  },
+  {
+    id: 12,
+    title: "Scoo Boo ",
+    category: "Web Design",
+    image: "/scooboo.png",
+  },
+  {
+    id: 13,
+    title: "Kaya Skincare ",
+    category: "Web Design",
+    image: "/kaya.png",
+  },
+  {
+    id: 14,
+    title: "Homes to Life ",
+    category: "Web Design",
+    image: "/homes.png",
+  },
+  {
+    id: 15,
+    title: "Feel Well ",
+    category: "Web Design",
+    image: "/feelwell.png",
+  },
+  {
+    id: 16,
+    title: "Do it Up ",
+    category: "Web Design",
+    image: "/doitup.png",
+  },
+  {
+    id: 17,
+    title: "Shilputsi ",
+    category: "Web Design",
+    image: "/4.png",
   },
 ]
 
@@ -123,7 +165,7 @@ const WorkPage = () => {
               className="group"
             >
               <Link to={`/work/${project.id}`}>
-                <div className="relative aspect-[4/3] overflow-hidden mb-4">
+                <div className="relative overflow-hidden mb-4">
                   <img
                     src={project.image}
                     alt={project.title}

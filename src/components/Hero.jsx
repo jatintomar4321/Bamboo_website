@@ -45,9 +45,9 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-between">
-        <div className="max-w-[2000px] mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-32">
-          <h1 className={`text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none font-medium max-w-full ${getAnimationClass('delay-300')}`}>
-            Unleashing the Power of Your Brand
+        <div className="max-w-[2000px] mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-16">
+          <h1 className={`text-white text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] leading-none tracking-tighter font-medium max-w-full ${getAnimationClass('delay-300')}`}>
+          Your E-commerce Growth Partner
           </h1>
         </div>
         
@@ -56,7 +56,7 @@ const Hero = () => {
           India/Mumbai
           </span>
           <p className={`text-white max-w-md text-base sm:text-lg ${getAnimationClass('delay-700')}`}>
-            A strategic social media and marketing studio with a common vision of using social media to connect clients with their audiences
+          A collaborative marketing partner dedicated to revitalizing businesses by strengthening their marketability.
           </p>
         </div>
       </div>
