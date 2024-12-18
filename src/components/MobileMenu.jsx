@@ -35,7 +35,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
   };
 
   const menuItems = ['Work', 'About', 'News', 'Contact'];
-  const socialItems = ['Instagram', 'Facebook', 'Youtube', 'Tiktok'];
+  const socialItems = ['Instagram', 'Facebook', 'Youtube',];
 
   return (
     <motion.div
@@ -54,13 +54,13 @@ const MobileMenu = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        <nav className="flex-1 flex flex-col justify-center">
+        <nav className="flex-1 flex flex-col justify-top">
           {menuItems.map((item, i) => (
             <motion.div
               key={item}
               custom={i}
               variants={itemVariants}
-              className="py-4"
+              className="py-2"
             >
               <Link
                 to={`/${item.toLowerCase()}`}
@@ -73,7 +73,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
           ))}
         </nav>
 
-        <div className="space-y-8">
+        <div className="space-y-2 pb-16">
           <motion.div
             variants={itemVariants}
             custom={menuItems.length + 1}
@@ -90,7 +90,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
               rel="noopener noreferrer"
               custom={menuItems.length + 2 + i}
               variants={itemVariants}
-              className="flex items-center justify-between text-white text-xl font-light py-2 border-b border-white/20 group"
+              className="flex items-center justify-between text-white text-xl font-light  border-b border-white/20 group"
             >
               {item}
               <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-opacity" />
