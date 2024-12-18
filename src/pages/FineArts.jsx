@@ -22,16 +22,13 @@ const FineArts = () => {
     >
       <DeepaGurnaniHeader 
       header="Fine Arts" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/fine.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
-
+      <ZoomImageSection image="/fine1.png" />
+      <ZoomImageSection image="/fine2.png" />
+      <ZoomImageSection image="/fine3.png" />
+      <ZoomImageSection image="/fine4.png" />
+      <ZoomImageSection image="/fine5.png" />
     </motion.div>
   )
 }

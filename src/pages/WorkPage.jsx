@@ -93,7 +93,7 @@ const projects = [
     title: "Kaya Skincare ",
     category: "Web Design",
     image: "/kaya.png",
-    route: "/work/kayaskincare"
+    route: "/work/kaya"
   },
   {
     id: 14,
@@ -107,20 +107,20 @@ const projects = [
     title: "Feel Well ",
     category: "Web Design",
     image: "/feelwell.png",
-    route: "/work/feel-well"
+    route: "/work/feelwell"
   },
   {
     id: 16,
     title: "Do it Up ",
     category: "Web Design",
     image: "/doitup.png",
-    route: "/work/do-it-up"
+    route: "/work/doitup"
   },
   {
     id: 17,
     title: "Shilputsi ",
     category: "Web Design",
-    image: "/4.png",
+    image: "/shilputsi.png",
     route: "/work/shilputsi"
   },
 ]

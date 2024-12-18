@@ -22,12 +22,12 @@ const RenuPage = () => {
     >
       <DeepaGurnaniHeader 
       header="Renu Oberoi" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/1.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
+      <ZoomImageSection image="/Renu1.png" />
+      <ZoomImageSection image="/renu2.png" />
+      <ZoomImageSection image="/renu3.png" />
+      <ZoomImageSection image="/renu4.png" />
       <ZoomImageSection image="/deepa5.png" />
       <ZoomImageSection image="/deepa6.png" />
       <ZoomImageSection image="/deepa7.png" />

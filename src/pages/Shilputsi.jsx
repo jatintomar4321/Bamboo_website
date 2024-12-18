@@ -5,8 +5,8 @@ import ConceptSection from '../components/ConceptSection'
 import DeepaGurnaniHeader from '../components/DeepaGurnaniHeader'
 import ZoomImageSection from '../components/ZoomImageSection'
 
-const DeepaGurnani = () => {
-  const { id } = useParams()
+const Shilputsi = () => {
+  
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -20,14 +20,14 @@ const DeepaGurnani = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-white"
     >
-      <DeepaGurnaniHeader projectId="2"
+      <DeepaGurnaniHeader 
       header="Shilputsi" />
       <ZoomImageSection image="/2.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
+      <ZoomImageSection image="/shilp1.png" />
+      <ZoomImageSection image="/shilp2.png" />
+      <ZoomImageSection image="/shilp3.png" />
+      <ZoomImageSection image="/shilp4.png" />
       <ZoomImageSection image="/deepa5.png" />
       <ZoomImageSection image="/deepa6.png" />
       <ZoomImageSection image="/deepa7.png" />
@@ -36,5 +36,5 @@ const DeepaGurnani = () => {
   )
 }
 
-export default DeepaGurnani
+export default Shilputsi
 

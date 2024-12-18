@@ -22,15 +22,17 @@ const Raf = () => {
     >
       <DeepaGurnaniHeader projectId={id}
       header=" RAF Clothing" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/3.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
+      <ZoomImageSection image="/raf1.png" />
+      <ZoomImageSection image="/raf2.png" />
+      <ZoomImageSection image="/raf3.png" />
+      <ZoomImageSection image="/raf4.png" />
+      <ZoomImageSection image="/raf5.png" />
+      <ZoomImageSection image="/raf6.png" />
+      <ZoomImageSection image="/raf7.png" />
+      <ZoomImageSection image="/raf8.png" />
+
 
     </motion.div>
   )

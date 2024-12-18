@@ -12,7 +12,7 @@ const ZoomImageSection = ({image}) => {
     offset: ["start end", "start start"]
   })
   
-  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 0.97])
+  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 0.99])
 
   useEffect(() => {
     const img = new Image()
@@ -33,17 +33,17 @@ const ZoomImageSection = ({image}) => {
           className="w-full h-full"
           initial={{ scale: 1 }}
           style={{ 
-            scale: isInView ? scale : 0,
+            scale: isInView ? scale : 1.19,
             height: `calc(100vw / ${imageAspectRatio})`,
             maxHeight: '100vh',
           }}
           transition={{ duration: 0.5 }}
         >
-          <div className="relative ">
+          <div className="relative h-full w-screen ">
             <img
               src={image}
               alt="Watercolor landscape painting showing a serene beach scene"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
         </motion.div>

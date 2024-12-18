@@ -17,6 +17,13 @@ import SoQuod from "./pages/SoQuod"
 import Soujanya from "./pages/Soujanya"
 import WeAranemoia from "./pages/WeAranemoia"
 import Skifit from "./pages/Skifit"
+import ScooBoo from "./pages/ScooBoo"
+import Kaya from "./pages/Kaya"
+import HomesToLife from "./pages/HomesToLife"
+import FeelWell from "./pages/FeelWell"
+import DoItUp from "./pages/DoItUp"
+import Shilputsi from "./pages/Shilputsi"
+import FineArts from "./pages/FineArts"
 
 
 const AppContent = () => {
@@ -67,7 +74,16 @@ const AppContent = () => {
                 <Route path="/work/SoQuod" element={<SoQuod />} />
                 <Route path="/work/Soujanya" element={<Soujanya />} />
                 <Route path="/work/WeAranemoia" element={<WeAranemoia />} />
-                <Route path="/work/Skifit" element={<Skifit />} />
+                <Route path="/work/ScooBoo" element={<ScooBoo />} />
+                <Route path="/work/Kaya" element={<Kaya />} />
+                <Route path="/work/homestolife" element={<HomesToLife />} />
+                <Route path="/work/FeelWell" element={<FeelWell />} />
+                <Route path="/work/DoIiUp" element={<DoItUp />} />
+                <Route path="/work/Shilputsi" element={<Shilputsi />} />
+                <Route path="/work/Finearts" element={<FineArts />} />
+
+                
+
 
 
               </Routes>

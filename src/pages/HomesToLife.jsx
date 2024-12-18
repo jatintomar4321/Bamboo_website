@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import ConceptSection from '../components/ConceptSection'
 import DeepaGurnaniHeader from '../components/DeepaGurnaniHeader'
 import ZoomImageSection from '../components/ZoomImageSection'
 
-const DeepaGurnani = () => {
-  const { id } = useParams()
+const HomesToLife = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -36,5 +34,5 @@ const DeepaGurnani = () => {
   )
 }
 
-export default DeepaGurnani
+export default HomesToLife
 

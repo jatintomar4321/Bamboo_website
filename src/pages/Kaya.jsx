@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import ConceptSection from '../components/ConceptSection'
 import DeepaGurnaniHeader from '../components/DeepaGurnaniHeader'
 import ZoomImageSection from '../components/ZoomImageSection'
 
-const DeepaGurnani = () => {
-  const { id } = useParams()
+const Kaya = () => {
+  
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -20,7 +19,7 @@ const DeepaGurnani = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-white"
     >
-      <DeepaGurnaniHeader projectId="2"
+      <DeepaGurnaniHeader 
       header="Kaya" />
       <ZoomImageSection image="/2.png" />
       <ConceptSection />
@@ -36,5 +35,5 @@ const DeepaGurnani = () => {
   )
 }
 
-export default DeepaGurnani
+export default Kaya
 

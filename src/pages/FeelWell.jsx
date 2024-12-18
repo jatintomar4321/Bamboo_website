@@ -5,8 +5,7 @@ import ConceptSection from '../components/ConceptSection'
 import DeepaGurnaniHeader from '../components/DeepaGurnaniHeader'
 import ZoomImageSection from '../components/ZoomImageSection'
 
-const DeepaGurnani = () => {
-  const { id } = useParams()
+const FeelWell = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -20,21 +19,19 @@ const DeepaGurnani = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-white"
     >
-      <DeepaGurnaniHeader projectId="2"
+      <DeepaGurnaniHeader 
       header="Feel Well" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/feelwell.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
+      <ZoomImageSection image="/feel1.png" />
+      <ZoomImageSection image="/feel2.png" />
+      <ZoomImageSection image="/feel3.png" />
+      <ZoomImageSection image="/feel4.png" />
+
 
     </motion.div>
   )
 }
 
-export default DeepaGurnani
+export default FeelWell
 
