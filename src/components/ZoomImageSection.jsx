@@ -1,9 +1,7 @@
-'use client'
+import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
-import { motion, useScroll, useTransform, useInView } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
-
-const ZoomImageSection = () => {
+const ZoomImageSection = ({image}) => {
   const sectionRef = useRef(null)
   const imageRef = useRef(null)
   const [imageAspectRatio, setImageAspectRatio] = useState(1)
@@ -14,15 +12,15 @@ const ZoomImageSection = () => {
     offset: ["start end", "start start"]
   })
   
-  const scale = useTransform(scrollYProgress, [0, 1], [1.5, 1.3])
+  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 0.97])
 
   useEffect(() => {
     const img = new Image()
-    img.src = '/zoom1.webp'
+    img.src = image
     img.onload = () => {
       setImageAspectRatio(img.width / img.height)
     }
-  }, [])
+  }, [image])
 
   return (
     <section 
@@ -33,17 +31,17 @@ const ZoomImageSection = () => {
         <motion.div
           ref={imageRef}
           className="w-full h-full"
-          initial={{ scale: 2 }}
+          initial={{ scale: 1 }}
           style={{ 
-            scale: isInView ? scale : 2,
+            scale: isInView ? scale : 0,
             height: `calc(100vw / ${imageAspectRatio})`,
             maxHeight: '100vh',
           }}
           transition={{ duration: 0.5 }}
         >
-          <div className="relative w-full h-full">
+          <div className="relative ">
             <img
-              src="/zoom1.webp"
+              src={image}
               alt="Watercolor landscape painting showing a serene beach scene"
               className="w-full h-full object-cover"
             />

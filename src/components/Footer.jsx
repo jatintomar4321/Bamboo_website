@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 
 const Footer = () => {
@@ -12,26 +13,26 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-9 mb-10 md:mb-60 ">
           {/* Logo */}
           <div>
-            <a href="/" className="text-2xl font-light">
+            <Link to="/" className="text-2xl font-light">
               <img
-              src="/darkLogo.svg" 
-              alt="Logo"
-              className="h-10 object-contain w-44 transition-opacity duration-300"
-            />
-            </a>
+                src="/darkLogo.svg" 
+                alt="Logo"
+                className="h-10 object-contain w-44 transition-opacity duration-300"
+              />
+            </Link>
           </div>
 
           {/* Main Navigation */}
           <nav className="flex flex-col items-start text-3xl tracking-tight md:text-6xl font-[450]">
             {mainLinks.map((link) => (
-              <a
+              <Link
                 key={link}
-                href={`/${link.toLowerCase()}`}
+                to={`/${link.toLowerCase()}`}
                 className="relative group"
               >
                 {link}
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 ease-out group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -60,35 +61,35 @@ const Footer = () => {
         {/* Call to Action */}
         <div className="mb-8 ">
           <p className="text-xl mb-4">Interested in working with us?</p>
-          <a 
-  href="/contact" 
-  className="relative text-6xl md:text-[12rem] font-[500] border-black ease-out duration-700 group"
->
-  Let's Chat
-  <span 
-    className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-700 group-hover:w-full"
-  ></span>
-</a>
+          <Link 
+            to="/contact" 
+            className="relative text-6xl md:text-[12rem] font-[500] border-black ease-out duration-700 group"
+          >
+            Let's Chat
+            <span 
+              className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-700 group-hover:w-full"
+            ></span>
+          </Link>
         </div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-3 border-t border-gray-200">
-        <div>
-        <img
+          <div>
+            <img
               src="/fullLogo.svg"
               alt="Logo"
               className="h-10 object-contain w-44 transition-opacity duration-300"
             />
-        </div>
+          </div>
           <div className="flex flex-wrap gap-x-8 gap-y-4 mb-4 md:mb-0">
             {bottomLinks.map((link) => (
-              <a
+              <Link
                 key={link}
-                href={`/${link.toLowerCase().replace(' ', '-')}`}
+                to={`/${link.toLowerCase().replace(' ', '-')}`}
                 className="text-sm hover:opacity-70 transition-opacity"
               >
                 {link}
-              </a>
+              </Link>
             ))}
           </div>
           <span className="text-sm">©2024</span>

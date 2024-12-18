@@ -1,6 +1,6 @@
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const projects = [
@@ -9,102 +9,119 @@ const projects = [
     title: "Renu Oberoi",
     category: "Visual Identity",
     image: "/1.png",
+    route: "/work/renu-oberoi"
   },
   {
     id: 2,
     title: "Deepa Gurnani",
     category: "Visual Identity",
     image: "/2.png",
+    route: "/work/deepa-gurnani"
   },
   {
     id: 3,
     title: "RAF Clothing",
     category: "Brand Strategy",
     image: "/3.png",
+    route: "/work/raf"
   },
   {
     id: 4,
     title: "Ace Blend",
     category: "Web Design",
     image: "/4.png",
+    route: "/work/aceblend"
   },
   {
     id: 5,
     title: "Wearanemoia",
     category: "Web Design",
     image: "/123.png",
+    route: "/work/wearanemoia"
   },
   {
     id: 6,
     title: "Soujanya",
     category: "Web Design",
     image: "/soj.png",
+    route: "/work/soujanya"
   },
   {
     id: 7,
     title: "Fine Arts",
     category: "Web Design",
     image: "/fine.png",
+    route: "/work/finearts"
   },
   {
     id: 8,
     title: "So Quod",
     category: "Web Design",
     image: "/SO.png",
+    route: "/work/soquod"
   },
   {
     id: 9,
-    title: "Skift ",
+    title: "Skifit ",
     category: "Web Design",
     image: "/skifit.png",
+    route: "/work/skifit"
   },
   {
     id: 10,
     title: "Atelier",
     category: "Web Design",
     image: "/atelier.png",
+    route: "/work/atelier"
   },
   {
     id: 11,
     title: "The Artist ",
     category: "Web Design",
     image: "/artist.png",
+    route: "/work/artist"
   },
   {
     id: 12,
     title: "Scoo Boo ",
     category: "Web Design",
     image: "/scooboo.png",
+    route: "/work/scooboo"
   },
   {
     id: 13,
     title: "Kaya Skincare ",
     category: "Web Design",
     image: "/kaya.png",
+    route: "/work/kayaskincare"
   },
   {
     id: 14,
     title: "Homes to Life ",
     category: "Web Design",
     image: "/homes.png",
+    route: "/work/homestolife"
   },
   {
     id: 15,
     title: "Feel Well ",
     category: "Web Design",
     image: "/feelwell.png",
+    route: "/work/feel-well"
   },
   {
     id: 16,
     title: "Do it Up ",
     category: "Web Design",
     image: "/doitup.png",
+    route: "/work/do-it-up"
   },
   {
     id: 17,
     title: "Shilputsi ",
     category: "Web Design",
     image: "/4.png",
+    route: "/work/shilputsi"
   },
 ]
 
@@ -164,7 +181,7 @@ const WorkPage = () => {
               variants={itemVariants}
               className="group"
             >
-              <Link to={`/work/${project.id}`}>
+              <Link to={project.route}>
                 <div className="relative overflow-hidden mb-4">
                   <img
                     src={project.image}
@@ -184,3 +201,4 @@ const WorkPage = () => {
 }
 
 export default WorkPage
+

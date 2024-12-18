@@ -1,13 +1,23 @@
-import React, { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import SvgShuffleLoader from "./pages/SvgShuffleLoader"
-import Nav from './components/Nav'
+import { AnimatePresence, motion } from "framer-motion"
+import React, { useEffect, useState } from "react"
+import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom'
 import Footer from './components/Footer'
-import HomePage from "./pages/HomePage"
-import WorkPage from './pages/WorkPage'
+import Nav from './components/Nav'
 import ContactPage from './pages/ContactPage'
-import DeepaGurmani from './pages/DeepaGurmani'
+import DeepaGurnani from './pages/DeepaGurnani'
+import HomePage from "./pages/HomePage"
+import SvgShuffleLoader from "./pages/SvgShuffleLoader"
+import WorkPage from './pages/WorkPage'
+import RenuPage from './pages/RenuPage'
+import Raf from './pages/Raf'
+import AceBlend from './pages/AceBlend'
+import Artist from "./pages/Artist"
+import Atelier from "./pages/Atelier"
+import SoQuod from "./pages/SoQuod"
+import Soujanya from "./pages/Soujanya"
+import WeAranemoia from "./pages/WeAranemoia"
+import Skifit from "./pages/Skifit"
+
 
 const AppContent = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -45,10 +55,21 @@ const AppContent = () => {
             <Nav />
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<HomePage />} />
                 <Route path="/work" element={<WorkPage />} />
                 <Route path="/contact" element={<ContactPage />} />
-                <Route path="/work/:id" element={<DeepaGurmani />} />
+                <Route path="/work/deepa-gurnani" element={<DeepaGurnani />} />
+                <Route path="/work/renu-oberoi" element={<RenuPage />} />
+                <Route path="/work/raf" element={<Raf />} />
+                <Route path="/work/AceBlend" element={<AceBlend />} />
+                <Route path="/work/Artist" element={<Artist/>} />
+                <Route path="/work/Atelier" element={<Atelier />} />
+                <Route path="/work/SoQuod" element={<SoQuod />} />
+                <Route path="/work/Soujanya" element={<Soujanya />} />
+                <Route path="/work/WeAranemoia" element={<WeAranemoia />} />
+                <Route path="/work/Skifit" element={<Skifit />} />
+
+
               </Routes>
             </AnimatePresence>
             <Footer />
