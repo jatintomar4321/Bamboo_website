@@ -20,15 +20,11 @@ const DoItUp = () => {
     >
       <DeepaGurnaniHeader 
       header="Do it Up" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/doitup.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
+      <ZoomImageSection image="/do1.png" />
+      <ZoomImageSection image="/do2.png" />
+      <ZoomImageSection image="/do3.png" />
 
     </motion.div>
   )

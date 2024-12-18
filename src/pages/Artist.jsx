@@ -20,10 +20,10 @@ const Artist = () => {
     >
       <DeepaGurnaniHeader 
       header="The Artist" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/artist.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
+      <ZoomImageSection image="/Artist1.png" />
+      <ZoomImageSection image="/artist2.png" />
       <ZoomImageSection image="/deepa3.png" />
       <ZoomImageSection image="/deepa4.png" />
       <ZoomImageSection image="/deepa5.png" />

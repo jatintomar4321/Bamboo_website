@@ -21,15 +21,15 @@ const SoQuod = () => {
     >
       <DeepaGurnaniHeader 
       header="So Quod" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/SO.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
+      <ZoomImageSection image="/so1.png" />
+      <ZoomImageSection image="/so2.png" />
+      <ZoomImageSection image="/so3.png" />
+      <ZoomImageSection image="/so4.png" />
+
+
+     
 
     </motion.div>
   )

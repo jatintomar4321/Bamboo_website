@@ -22,15 +22,13 @@ const Shilputsi = () => {
     >
       <DeepaGurnaniHeader 
       header="Shilputsi" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/shilputsi.png" />
       <ConceptSection />
       <ZoomImageSection image="/shilp1.png" />
       <ZoomImageSection image="/shilp2.png" />
       <ZoomImageSection image="/shilp3.png" />
       <ZoomImageSection image="/shilp4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
+
 
     </motion.div>
   )

@@ -20,10 +20,10 @@ const HomesToLife = () => {
     >
       <DeepaGurnaniHeader projectId="2"
       header="Homes to life" />
-      <ZoomImageSection image="/2.png" />
+      <ZoomImageSection image="/homes.png" />
       <ConceptSection />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
+      <ZoomImageSection image="/homes1.png" />
+      <ZoomImageSection image="/homes2.png" />
       <ZoomImageSection image="/deepa3.png" />
       <ZoomImageSection image="/deepa4.png" />
       <ZoomImageSection image="/deepa5.png" />
