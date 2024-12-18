@@ -7,6 +7,7 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isOverWhite, setIsOverWhite] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isDarkLogo, setIsDarkLogo] = useState(false)
   const navRef = useRef(null)
   const location = useLocation()
 
@@ -43,8 +44,12 @@ const Nav = () => {
 
   const isHomePage = location.pathname === '/'
 
+  useEffect(() => {
+    setIsDarkLogo((isOverWhite && !isHomePage) || (isHomePage && isScrolled))
+  }, [isOverWhite, isHomePage, isScrolled])
+
   const navItemClass = `transition-colors duration-300 ${
-    (isOverWhite && !isHomePage) || (isHomePage && isScrolled) ? 'text-black' : 'text-white'
+    isDarkLogo ? 'text-black' : 'text-white'
   } hover:opacity-80`
 
   return (
@@ -57,10 +62,10 @@ const Nav = () => {
       >
         <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
           <Link to="/" className={`text-xl md:text-2xl font-light ${navItemClass}`}>
-          <img
-              src="/darkLogo.svg" 
+            <img
+              src={isDarkLogo ? "/darkLogo.svg" : "/whiteLogo.svg"}
               alt="Logo"
-              className="h-10 object-contain w-44 transition-opacity duration-300"
+              className="h-10 object-contain w-44 transition-all duration-300"
             />
           </Link>
           
@@ -100,3 +105,4 @@ const Nav = () => {
 }
 
 export default Nav
+
