@@ -28,9 +28,7 @@ const RenuPage = () => {
       <ZoomImageSection image="/renu2.png" />
       <ZoomImageSection image="/renu3.png" />
       <ZoomImageSection image="/renu4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
+    
 
     </motion.div>
   )
