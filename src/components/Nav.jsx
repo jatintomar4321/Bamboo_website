@@ -57,7 +57,7 @@ const Nav = () => {
       <nav 
         ref={navRef} 
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+          isScrolled ? 'bg-white/70 backdrop-blur-sm shadow-md' : 'bg-transparent'
         }`}
       >
         <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-6 flex items-center justify-between">

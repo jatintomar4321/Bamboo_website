@@ -11,24 +11,28 @@ const projects = [
     title: "Renu Oberoi",
     category: "Visual Identity",
     image: "/1.png",
+    route: "/work/renu-oberoi"
   },
   {
     id: 2,
     title: "Deepa Gurnani",
     category: "Visual Identity",
     image: "/2.png",
+    route: "/work/deepa-gurnani"
   },
   {
     id: 3,
     title: "RAF Clothing",
     category: "Brand Strategy",
     image: "/3.png",
+    route: "/work/raf"
   },
   {
     id: 4,
     title: "Ace Blend",
     category: "Web Design",
     image: "/4.png",
+    route: "/work/aceblend"
   },
 ]
 
@@ -123,17 +127,17 @@ const Work = () => {
               variants={itemVariants}
               className="group"
             >
-              <a href={`/work/${project.id}`}>
-                <div className="relative  overflow-hidden mb-2 sm:mb-4">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-lg sm:text-xl font-light">{project.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-600">{project.category}</p>
-              </a>
+              <Link to={project.route}>
+                              <div className="relative overflow-hidden mb-4">
+                                <img
+                                  src={project.image}
+                                  alt={project.title}
+                                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                />
+                              </div>
+                              <h3 className="text-xl font-light">{project.title}</h3>
+                              <p className="text-sm text-gray-600">{project.category}</p>
+               </Link>
             </motion.div>
           ))}
         </div>
