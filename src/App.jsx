@@ -68,7 +68,7 @@ const AppContent = () => {
                 <Route path="/work/deepa-gurnani" element={<DeepaGurnani />} />
                 <Route path="/work/renu-oberoi" element={<RenuPage />} />
                 <Route path="/work/raf" element={<Raf />} />
-                <Route path="/work/AceBlend" element={<AceBlend />} />
+                <Route path="/work/aceblend" element={<AceBlend />} />
                 <Route path="/work/Artist" element={<Artist/>} />
                 <Route path="/work/Atelier" element={<Atelier />} />
                 <Route path="/work/SoQuod" element={<SoQuod />} />

@@ -1,13 +1,22 @@
+import axios from 'axios';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const ContactPage = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,16 +51,37 @@ const ContactPage = () => {
     { name: 'Youtube', url: 'https://youtube.com' },
   ];
 
-  const handleSubmit = (e) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
+    try {
+      const response = await axios.post('http://localhost:8000/send-email', {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      });
+      if (response.status === 200) {
+        setSuccessMessage('Email sent successfully. Thank you for contacting us!');
+        setFormData({ name: '', email: '', message: '' });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSuccessMessage('An error occurred. Please try again.');
+    }
   };
 
   return (
     <section className="min-h-screen bg-white">
       <motion.h1
         variants={itemVariants}
-        className="text-[6rem] md:text-[9rem] lg:text-[13rem] font-[500] border-b-2  px-2 pt-6 pb-8 md:pb-10 lg:pb-40"
+        className="text-[6rem] md:text-[9rem] lg:text-[13rem] font-[500] border-b-2 px-2 pt-6 pb-8 md:pb-10 lg:pb-40"
       >
         Contact
       </motion.h1>
@@ -129,6 +159,9 @@ const ContactPage = () => {
                 <div>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
                     placeholder="Your Name"
                     className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
                     required
@@ -138,6 +171,9 @@ const ContactPage = () => {
                 <div>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="Your Email"
                     className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
                     required
@@ -146,6 +182,9 @@ const ContactPage = () => {
 
                 <div>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Your message"
                     rows={4}
                     className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors resize-none"
@@ -154,6 +193,11 @@ const ContactPage = () => {
                 </div>
               </div>
 
+              {successMessage && (
+                <div className="mt-4 text-green-400">
+                  {successMessage}
+                </div>
+              )}
               <button
                 type="submit"
                 className="inline-block text-lg border-b border-white pb-1 hover:opacity-70 transition-opacity"
@@ -169,3 +213,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+

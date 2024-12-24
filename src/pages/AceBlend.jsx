@@ -21,7 +21,7 @@ const AceBlend = () => {
       className="min-h-screen bg-white"
     >
         <DeepaGurnaniHeader 
-      header="Renu Oberoi" 
+      header="Ace Blend" 
       year="2024"
       client="Renu Oberoi"  
       service="Visual Identity, Production-Video and Photo Shoot. "

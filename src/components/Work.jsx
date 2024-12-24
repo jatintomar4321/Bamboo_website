@@ -32,7 +32,7 @@ const projects = [
     title: "Ace Blend",
     category: "Web Design",
     image: "/4.png",
-    route: "/work/aceblend"
+    route: "/work/deepa-gurnani"
   },
 ]
 
@@ -121,7 +121,7 @@ const Work = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-          {firstRowProjects.map((project) => (
+          {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
