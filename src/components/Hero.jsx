@@ -47,7 +47,7 @@ const Hero = () => {
       <div className="relative z-10 h-full flex flex-col justify-between">
         <div className="max-w-[2000px] mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-16">
           <h1 className={`text-white text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] leading-none tracking-tighter font-medium max-w-full ${getAnimationClass('delay-300')}`}>
-          Your E-commerce Growth Partner
+          Your Digital Growth Partner
           </h1>
         </div>
         

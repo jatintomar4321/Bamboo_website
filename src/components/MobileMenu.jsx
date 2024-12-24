@@ -34,8 +34,8 @@ const MobileMenu = ({ isOpen, onClose }) => {
     }),
   };
 
-  const menuItems = ['Work', 'About', 'News', 'Contact'];
-  const socialItems = ['Instagram', 'Facebook', 'Youtube',];
+  const menuItems = ['Work','Contact'];
+  const socialItems = ['Instagram', 'Facebook','Linkedin', 'Youtube',];
 
   return (
     <motion.div

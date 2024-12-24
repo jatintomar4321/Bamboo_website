@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 
 const Footer = () => {
-  const mainLinks = ['Work', 'About', 'News', 'Contact']
-  const socialLinks = ['Instagram', 'Facebook', 'Tiktok', 'Youtube']
+  const mainLinks = ['Work','Contact']
+  const socialLinks = ['Instagram', 'Facebook', 'Linkedin', 'Youtube']
   const bottomLinks = ['More Template', 'Licenses', 'Changelog', 'Style Guide', 'Webflow']
 
   return (

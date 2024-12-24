@@ -71,18 +71,14 @@ const Nav = () => {
           
           <div className="hidden md:flex items-center gap-8">
             <span className={navItemClass}>©2024</span>
+            </div>
             <div className="flex items-center gap-8">
               <Link to="/work" className={navItemClass}>
                 Work
               </Link>
-              <Link to="/about" className={navItemClass}>
-                About
-              </Link>
-              <Link to="/news" className={navItemClass}>
-                News
-              </Link>
+           
             </div>
-          </div>
+          
 
           <div className="flex items-center gap-4">
             <Link to="/contact" className={`hidden md:block ${navItemClass}`}>

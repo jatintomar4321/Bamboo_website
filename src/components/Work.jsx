@@ -32,7 +32,7 @@ const projects = [
     title: "Ace Blend",
     category: "Web Design",
     image: "/4.png",
-    route: "/work/deepa-gurnani"
+    route: "/work/aceblend"
   },
 ]
 
@@ -121,7 +121,7 @@ const Work = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-          {projects.map((project) => (
+          {firstRowProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
@@ -149,25 +149,25 @@ const Work = () => {
             variants={containerVariants}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6"
           >
-            {secondRowProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                className="group"
-              >
-                <a href={`/work/${project.id}`}>
-                  <div className="relative aspect-[16/9] overflow-hidden mb-2 sm:mb-4">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-light">{project.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-600">{project.category}</p>
-                </a>
-              </motion.div>
-            ))}
+             {secondRowProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              className="group"
+            >
+              <Link to={project.route}>
+                              <div className="relative overflow-hidden mb-4">
+                                <img
+                                  src={project.image}
+                                  alt={project.title}
+                                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                />
+                              </div>
+                              <h3 className="text-xl font-light">{project.title}</h3>
+                              <p className="text-sm text-gray-600">{project.category}</p>
+               </Link>
+            </motion.div>
+          ))}
           </motion.div>
         )}
       </motion.div>
