@@ -24,7 +24,7 @@ const DeepaGurnani = () => {
       year="2024"
       client="Deepa Gurnani"  
       service="Visual Identity "
-      industry="Jwellery"
+      industry=" Jewellery"
       />
       <ZoomImageSection image="/2.png" />
       <ConceptSection 

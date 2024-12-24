@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import ConceptSection from '../components/ConceptSection'
 import DeepaGurnaniHeader from '../components/DeepaGurnaniHeader'
 import ZoomImageSection from '../components/ZoomImageSection'
@@ -24,7 +23,7 @@ const SoQuod = () => {
       year="2024"
       client=""  
       service="UIUX, Website Development "
-      industry="Clothing and Jwellery"
+      industry="Clothing and  Jewellery"
       />
       <ZoomImageSection image="/SO.png" />
       <ConceptSection 

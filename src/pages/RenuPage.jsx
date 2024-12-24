@@ -25,7 +25,7 @@ const RenuPage = () => {
       year="2024"
       client="Renu Oberoi"  
       service="Visual Identity. "
-      industry="Jwellery"
+      industry=" Jewellery"
       />
       <ZoomImageSection image="/1.png" />
       <ConceptSection 

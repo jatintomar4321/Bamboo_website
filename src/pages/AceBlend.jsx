@@ -25,7 +25,7 @@ const AceBlend = () => {
       year="2024"
       client="Renu Oberoi"  
       service="Visual Identity, Production-Video and Photo Shoot. "
-      industry="Jwellery"
+      industry=" Jewellery"
       />
       <ZoomImageSection image="/4.png" />
       <ConceptSection 
