@@ -20,10 +20,21 @@ const Raf = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-white"
     >
-      <DeepaGurnaniHeader projectId={id}
-      header=" RAF Clothing" />
+      <DeepaGurnaniHeader 
+      header="RAF Clothing" 
+      year="2024"
+      client="Rafat Kazi"  
+      service="Website on Shopify"
+      industry="Clothing"
+      />
       <ZoomImageSection image="/3.png" />
-      <ConceptSection />
+      <ConceptSection 
+      pdp1="Style and sophistication, now just a click away—meet RAF Clothing’s online charm"     
+      pdp2="By blending clean, modern design with intuitive functionality, the website now reflects RAF Clothing’s commitment to quality and style. It’s more than an online store,it’s a digital runway that captures the essence of their brand for a global audience."      
+      d1="UIUX Design"
+      d2="Visual Identity"
+      d3="Website Development"
+      />
       <ZoomImageSection image="/raf1.png" />
       <ZoomImageSection image="/raf2.png" />
       <ZoomImageSection image="/raf3.png" />

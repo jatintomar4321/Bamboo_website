@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { header } from 'framer-motion/client'
 
-const DeepaGurnaniHeader = ({header}) => {
+const DeepaGurnaniHeader = ({header,year,client,service,industry}) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -45,26 +45,26 @@ const DeepaGurnaniHeader = ({header}) => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex flex-col-4 md:flex-col-2 justify-between   pt-16 border-b pb-4"
+        className="flex flex-col-4 md:flex-col-2 justify-between  sm:text-md   pt-16 border-b pb-4"
       >
-        <motion.div variants={itemVariants} className=" text-4xl">
+        <motion.div variants={itemVariants} className=" text-xl sm:text-2xl md:4xl lg:4xl">
           
-          <p>2023</p>
+          <p>{year}</p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-xl">
+        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-md sm:text-md lg:xl">
           <p className=" text-gray-500">Client</p>
-          <p>Jimmy Wood</p>
+          <p>{client}</p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-xl">
+        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-md sm:text-md lg:xl">
           <p className=" text-gray-500">Service</p>
-          <p>Visual Identity</p>
+          <p>{service}</p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-xl">
+        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-md sm:text-md lg:xl">
           <p className=" text-gray-500">Industry</p>
-          <p>Design</p>
+          <p>{industry}</p>
         </motion.div>
       </motion.div>
     </header>

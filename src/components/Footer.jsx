@@ -81,17 +81,7 @@ const Footer = () => {
               className="h-10 object-contain w-44 transition-opacity duration-300"
             />
           </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-4 mb-4 md:mb-0">
-            {bottomLinks.map((link) => (
-              <Link
-                key={link}
-                to={`/${link.toLowerCase().replace(' ', '-')}`}
-                className="text-sm hover:opacity-70 transition-opacity"
-              >
-                {link}
-              </Link>
-            ))}
-          </div>
+          
           <span className="text-sm">©2024</span>
         </div>
       </div>

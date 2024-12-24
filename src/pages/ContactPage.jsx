@@ -39,7 +39,6 @@ const ContactPage = () => {
   const socialLinks = [
     { name: 'Instagram', url: 'https://instagram.com' },
     { name: 'Facebook', url: 'https://facebook.com' },
-    { name: 'Tiktok', url: 'https://tiktok.com' },
     { name: 'Youtube', url: 'https://youtube.com' },
   ];
 
@@ -61,16 +60,16 @@ const ContactPage = () => {
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={containerVariants}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5"
       >
         {/* Left Column - Contact Information */}
         <motion.div
           variants={itemVariants}
-          className="md:p-6 p-6 lg:p-10 space-y-16"
+          className="md:p-6 p-6 lg:py-10 space-y-16"
         >
           {/* Social Links */}
           <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-            <h3 className="text-xl">Social</h3>
+            <h3 className="text-md">Social</h3>
             <div className="space-y-1">
               {socialLinks.map((link) => (
                 <a
@@ -80,7 +79,7 @@ const ContactPage = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-between px-8 -mx-3 rounded-lg group transition-colors duration-300 hover:bg-black"
                 >
-                  <span className="text-lg group-hover:text-white transition-colors duration-300">
+                  <span className="text-md group-hover:text-white transition-colors duration-300">
                     {link.name}
                   </span>
                   <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
@@ -91,31 +90,35 @@ const ContactPage = () => {
 
           {/* Address */}
           <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-            <h3 className="text-xl">Address</h3>
+            <h3 className="text-md">Address</h3>
             <div>
-              <p>40 Queen Street</p>
-              <p>London</p>
-              <p>W13 6MQ</p>
+              <p>Office no. 108, </p>
+              <p> 1st Floor, Wing-C,</p>
+              <p>Trade World Premises</p> 
+              <p>Cooperative Society Ltd,</p>
+              <p> Kamla Mills Compound</p>
+              <p>Kamla City, Senapati Bapat Marg,</p>
+              <p> Lower Parel, Mumbai - 400013</p>
             </div>
           </div>
 
           {/* Email */}
           <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-            <h3 className="text-xl">Say hi</h3>
+            <h3 className="text-md">Say hi</h3>
             <a
-              href="mailto:Hello@Luminous.com"
+              href="mailto:info@bamboodigital.in"
               className="text-lg hover:opacity-70 transition-opacity"
             >
-              Hello@Luminous.com
+             info@bamboodigital.in
             </a>
           </div>
         </motion.div>
 
         {/* Right Column - Contact Form */}
-        <div className="p-4 sm:p-6 lg:p-10">
+        <div className="p-4 sm:p-6 lg:py-10">
           <motion.div
             variants={itemVariants}
-            className="bg-black text-white p-8 md:p-16 lg:p-24"
+            className="bg-black text-white p-8 md:py-10 lg:py-16"
           >
             <form onSubmit={handleSubmit} className="space-y-12">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">

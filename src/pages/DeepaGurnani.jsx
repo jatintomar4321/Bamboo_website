@@ -19,9 +19,21 @@ const DeepaGurnani = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-white"
     >
-      <DeepaGurnaniHeader header="Deepa Gurnani" />
+       <DeepaGurnaniHeader 
+      header="Deepa Gurnani" 
+      year="2024"
+      client="Deepa Gurnani"  
+      service="Visual Identity "
+      industry="Jwellery"
+      />
       <ZoomImageSection image="/2.png" />
-      <ConceptSection />
+      <ConceptSection 
+      pdp1=" Redefining elegance in the digital space, here craftsmanship meets modern transformation"
+      pdp2="This transformation goes beyond aesthetics  it’s a platform that celebrates craftsmanship while ensuring effortless discoverability. With a perfect blend of artistry and functionality, the website positions Deepa Gurnani as a global beacon for Indian craftsmanship in the luxury accessories space."
+      d1="Visual Identity "
+      d2="UIUX Design"
+      d3="Website Development"
+      />
       <ZoomImageSection image="/deepa1.png" />
       <ZoomImageSection image="/deepa2.png" />
       <ZoomImageSection image="/deepa3.png" />

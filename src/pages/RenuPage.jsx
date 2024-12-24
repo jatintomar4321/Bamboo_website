@@ -21,9 +21,20 @@ const RenuPage = () => {
       className="min-h-screen bg-white"
     >
       <DeepaGurnaniHeader 
-      header="Renu Oberoi" />
+      header="Renu Oberoi" 
+      year="2024"
+      client="Renu Oberoi"  
+      service="Visual Identity. "
+      industry="Jwellery"
+      />
       <ZoomImageSection image="/1.png" />
-      <ConceptSection />
+      <ConceptSection 
+      pdp1="Glamour reimagined online—turning timeless jewelry into a truly sparkling digital experience."
+      pdp2="For Renu Oberoi, it wasn’t just about having a website; it was about creating a space where luxury could shine. We brought the brilliance of their collections to life with rich visuals, fluid videos, and a design language that exudes sophistication. From prêt to classics, every piece is celebrated in a way that feels effortless yet extraordinary. The content flows with grace, and the custom development ensures every interaction is as polished as the jewelry. It’s not just a website; it’s a luxury experience tailored for the modern shopper."
+      d1="Enhanced Visual Communication "
+      d2="UIUX Design"
+      d3="Website Development"
+      />
       <ZoomImageSection image="/Renu1.png" />
       <ZoomImageSection image="/renu2.png" />
       <ZoomImageSection image="/renu3.png" />

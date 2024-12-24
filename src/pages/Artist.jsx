@@ -18,10 +18,21 @@ const Artist = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-white"
     >
-      <DeepaGurnaniHeader 
-      header="The Artist" />
+        <DeepaGurnaniHeader 
+      header="The Artist" 
+      year="2024"
+      client=" "  
+      service="Visual Identity "
+      industry="Decor"
+      />
       <ZoomImageSection image="/artist.png" />
-      <ConceptSection />
+      <ConceptSection 
+      pdp1="Handcrafted luxury, now online—elevating tradition with a modern touch  "
+      pdp2="The Artisan Anukedia’s timeless jewelry now shines in the digital space. With a complete website and UI/UX revamp, we’ve created an effortless shopping experience that mirrors the elegance of their handcrafted designs. Customers can explore a seamless blend of luxury and simplicity, with every detail reflecting the meticulous craftsmanship behind each piece."
+      d1="Visual Identity "
+      d2="UIUX Design"
+      d3="Website Development"
+      />
       <ZoomImageSection image="/Artist1.png" />
       <ZoomImageSection image="/artist2.png" />
       <ZoomImageSection image="/deepa3.png" />

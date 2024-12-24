@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-const ConceptSection = () => {
+const ConceptSection = ({pdp1,pdp2,d1,d2,d3}) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -43,7 +43,7 @@ const ConceptSection = () => {
           variants={itemVariants}
           className="text-5xl md:text-6xl font-[450]  leading-tight mb-32 lg:max-w-[50%]"
         >
-          Award-Winning Concept that would appeal to target audience and elevate brand image
+          {pdp1}
         </motion.h2>
 
         <div className="grid grid-cols-1 border-t-2 lg:grid-cols-2 gap-8 lg:gap-32">
@@ -53,24 +53,24 @@ const ConceptSection = () => {
             </div>
             <div className="flex justify-between border-t w-80 items-center gap-4">
                 
-              <span className="text-lg">Strategy</span>
+              <span className="text-lg">{d1}</span>
               <span className="w-2 h-2 bg-black rounded-full"></span>
             </div>
             <div className="flex justify-between border-t w-80 items-center gap-4">
             
-              <span className="text-lg">Web Design</span>
+              <span className="text-lg">{d2}</span>
               <span className="w-2 h-2 bg-black rounded-full"></span>
             </div>
             <div className="flex justify-between border-t w-80 items-center gap-4">
              
-              <span className="text-lg">Art Direction</span>
+              <span className="text-lg">{d3}</span>
               <span className="w-2 h-2 bg-black rounded-full"></span>
             </div>
           </motion.div>
 
           <motion.div variants={itemVariants}>
             <p className="text-lg leading-relaxed">
-              A good website is one that is well-designed and user-friendly, offering a pleasant and seamless experience for visitors. It effectively communicates its purpose or content, provides valuable and relevant information, and is visually appealing. A good website often has clear navigation menus, intuitive layout, and fast loading times. It also ensures accessibility for users with disabilities and is compatible with different devices and browsers. Additionally, a good website incorporates proper SEO practices to improve its visibility and ranking in search engine results
+                  {pdp2}
             </p>
           </motion.div>
         </div>
