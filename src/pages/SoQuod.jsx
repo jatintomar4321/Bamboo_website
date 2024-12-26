@@ -21,7 +21,7 @@ const SoQuod = () => {
       <DeepaGurnaniHeader 
       header="So Quod" 
       year="2024"
-      client=""  
+      client="Ikshit Pande"  
       service="UIUX, Website Development "
       industry="Clothing and  Jewellery"
       />

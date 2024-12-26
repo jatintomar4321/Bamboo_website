@@ -21,7 +21,7 @@ const Skifit = () => {
       <DeepaGurnaniHeader 
       header="SkiFit" 
       year="2023"
-      client=""  
+      client="Jashan"  
       service="Brand Identity, Website Development, UIUX and Production"
       industry="Skin Care"
       />

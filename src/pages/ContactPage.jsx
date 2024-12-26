@@ -92,8 +92,6 @@ const ContactPage = () => {
         variants={containerVariants}
         className="grid lg:grid-cols-2 sm:grid-cols-1 gap-5 lg:gap-5"
       >
-       
-       
             {/* Left Column - Contact Information */}
             <motion.div
               variants={itemVariants}
@@ -144,87 +142,75 @@ const ContactPage = () => {
                  info@bamboodigital.in
                 </a>
               </div>
-
-              {successMessage && (
-          <motion.div
-            variants={itemVariants}
-            className="bg-black text-white p-8 md:py-8 lg:py-10"
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
-              Let's collaborate and make wonderful stuff together!
-            </h2>
-            <div className="bg-white text-black p-6 text-center text-xl">
-              Thank you! Your submission has been received!
-            </div>
-          </motion.div>
-        )}
             </motion.div>
-            {!successMessage && (
-              <>
-
-            {/* Right Column - Contact Form */}
-            <div className="p-4 sm:p-6 lg:py-10">
-            
-              <motion.div
-                variants={itemVariants}
-                className="bg-black text-white p-8 md:py-10 lg:py-16"
-              >
-                <form onSubmit={handleSubmit} className="space-y-12">
+            {/* Right Column - Contact Form or Success Message */}
+            <motion.div
+              variants={itemVariants}
+              className="p-4 sm:p-6 lg:py-10"
+            >
+              {successMessage ? (
+                <div className="bg-black text-white p-8 md:py-10 lg:py-16">
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
                     Let's collaborate and make wonderful stuff together!
                   </h2>
-                  
-
-                  <div className="space-y-8">
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Your Name"
-                        className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Your Email"
-                        className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Your message"
-                        rows={4}
-                        className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors resize-none"
-                        required
-                      />
-                    </div>
+                  <div className="bg-white text-black p-6 text-center text-xl">
+                    {successMessage}
                   </div>
+                </div>
+              ) : (
+                <div className="bg-black text-white p-8 md:py-10 lg:py-16">
+                  <form onSubmit={handleSubmit} className="space-y-12">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
+                      Let's collaborate and make wonderful stuff together!
+                    </h2>
+                    <div className="space-y-8">
+                      <div>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          placeholder="Your Name"
+                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                          required
+                        />
+                      </div>
 
-                  <button
-                    type="submit"
-                    className="inline-block text-lg border-b border-white pb-1 hover:opacity-70 transition-opacity"
-                  >
-                    Submit your message
-                  </button>
-                </form>
-              </motion.div>
-            </div>
-          </>
-          
-        )}
+                      <div>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          placeholder="Your Email"
+                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          placeholder="Your message"
+                          rows={4}
+                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors resize-none"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="inline-block text-lg border-b border-white pb-1 hover:opacity-70 transition-opacity"
+                    >
+                      Submit your message
+                    </button>
+                  </form>
+                </div>
+              )}
+            </motion.div>
         
       </motion.div>
     </section>

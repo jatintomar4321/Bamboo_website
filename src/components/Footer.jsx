@@ -4,7 +4,13 @@ import { ArrowUpRight } from 'lucide-react'
 
 const Footer = () => {
   const mainLinks = ['Work','Contact']
-  const socialLinks = ['Instagram', 'Facebook', 'Linkedin', 'Youtube']
+  const socialLinks = [
+    { name: 'Instagram', url: 'https://instagram.com/your_username' },
+    { name: 'Facebook', url: 'https://facebook.com/your_page' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/your_profile' },
+    { name: 'YouTube', url: 'https://youtube.com/your_channel' },
+  ];
+  
   const bottomLinks = ['More Template', 'Licenses', 'Changelog', 'Style Guide', 'Webflow']
 
   return (
@@ -38,24 +44,24 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="space-y-0">
-            <h3 className="text-xl font-light">Social</h3>
-            <div className="flex flex-col space-y-0">
-              {socialLinks.map((social) => (
-                <a
-                  key={social}
-                  href={`https://${social.toLowerCase()}.com`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between py-2 px-3 -mx-3 group transition-colors duration-300 hover:bg-black"
-                >
-                  <span className="text-lg group-hover:text-white transition-colors duration-300">
-                    {social}
-                  </span>
-                  <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
-                </a>
-              ))}
-            </div>
+          <h3 className="text-xl font-light">Social</h3>
+          <div className="flex flex-col space-y-0">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between py-2 px-3 -mx-3 group transition-colors duration-300 hover:bg-black"
+              >
+                <span className="text-lg group-hover:text-white transition-colors duration-300">
+                  {social.name}
+                </span>
+                <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
+              </a>
+            ))}
           </div>
+        </div>
         </div>
 
         {/* Call to Action */}

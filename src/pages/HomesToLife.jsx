@@ -21,7 +21,7 @@ const HomesToLife = () => {
           <DeepaGurnaniHeader 
       header="Homes To Life" 
       year="2023"
-      client=""  
+      client="Shubham Dandwate "  
       service="Production,Marketing Communication "
       industry="Decor"
       />
@@ -35,11 +35,10 @@ const HomesToLife = () => {
       />
       <ZoomImageSection image="/homes1.png" />
       <ZoomImageSection image="/homes2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
+      <ZoomImageSection image="/homes3.png" />
+      <ZoomImageSection image="/homes4.png" />
+      <ZoomImageSection image="/homes5.png" />
+      <ZoomImageSection image="/homes6.png" />
 
     </motion.div>
   )

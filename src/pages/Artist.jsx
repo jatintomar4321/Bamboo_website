@@ -21,7 +21,7 @@ const Artist = () => {
         <DeepaGurnaniHeader 
       header="The Artist" 
       year="2024"
-      client=" "  
+      client=" Anu Kedia "  
       service="Visual Identity "
       industry="Decor"
       />
@@ -35,11 +35,10 @@ const Artist = () => {
       />
       <ZoomImageSection image="/Artist1.png" />
       <ZoomImageSection image="/artist2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
+      <ZoomImageSection image="/art4.png" />
+      <ZoomImageSection image="/art5.png" />
+      <ZoomImageSection image="/art6.png" />
+      <ZoomImageSection image="/art7.png" />
 
     </motion.div>
   )

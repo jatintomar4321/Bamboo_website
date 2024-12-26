@@ -22,7 +22,7 @@ const Kaya = () => {
       <DeepaGurnaniHeader 
       header="Kaya Skincare" 
       year="2023"
-      client=""  
+      client="Samyukta Iyer"  
       service="Production, Brand Identity, UIUX "
       industry="SkinCare"
       />

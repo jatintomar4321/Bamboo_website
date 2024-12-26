@@ -22,7 +22,7 @@ const FineArts = () => {
          <DeepaGurnaniHeader 
       header="Fine Arts" 
       year="2023"
-      client=""  
+      client="Maisha Samiha"  
       service="UIUX, Website Development"
       industry=" Jewellery"
       />

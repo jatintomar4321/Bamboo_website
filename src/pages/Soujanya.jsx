@@ -22,14 +22,14 @@ const Soujanya = () => {
       <DeepaGurnaniHeader 
       header="Soujanya" 
       year="2024"
-      client=""  
+      client="Jashan Soujanya"  
       service="Production, UIUX, Website (MERN Stack)"
       industry="Pignments & Colours "
       />
       <ZoomImageSection image="/soj.png" />
       <ConceptSection 
       pdp1="Bold pigments, vibrant solutions, delivering the world’s best colours to industries that demand excellence"
-      pdp2="Soujanya Alpha is the powerhouse behind the pigments and colours that fuel industries across the globe. Based in Mexico and Brazil, we’re the leaders in providing top-tier colour solutions, trusted by manufacturers and creators alike. Our revamped website and UI/UX design now reflect our boldness, making it easier for B2B clients to explore our vast range of products, connect with us, and access the quality they expect. It’s business, but with a bold, colourful twist—just the way we like it."
+      pdp2="Soujanya is the powerhouse behind the pigments and colours that fuel industries across the globe. Based in Mexico and Brazil, we’re the leaders in providing top-tier colour solutions, trusted by manufacturers and creators alike. Our revamped website and UI/UX design now reflect our boldness, making it easier for B2B clients to explore our vast range of products, connect with us, and access the quality they expect. It’s business, but with a bold, colourful twist—just the way we like it."
       d1="Visual Identy"
       d2="UIUX Design"
       d3="Website Development"

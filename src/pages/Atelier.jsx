@@ -22,7 +22,7 @@ const Atelier = () => {
         <DeepaGurnaniHeader 
       header="Atelier" 
       year="2024"
-      client="Renu Oberoi"  
+      client="Ashiesh Shah"  
       service="UIUX Revamp,Shopify Website Development,Visual Communication "
       industry="Decor"
       />

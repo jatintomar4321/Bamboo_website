@@ -30,8 +30,8 @@ const ScooBoo = () => {
       pdp1="Stationary made desirable and accessible with faster UX "
       pdp2="Scooboo brings kids’ imagination to life through thoughtfully designed, safe, and fun products. We took their playful vision and translated it into a seamless digital experience. From browsing to checkout, the new website and UI/UX revamp create a space where parents and kids can easily explore and discover. The result? A joyful online playground that reflects the fun and innovation Scooboo stands for,making shopping as playful as their products!"      
       d1="UIUX Revamp"
-      d2=""
-      d3=""
+      d2="Website Development"
+     
       />
       <ZoomImageSection image="/sb1.png" />
       <ZoomImageSection image="/sb2.png" />

@@ -21,7 +21,7 @@ const FeelWell = () => {
            <DeepaGurnaniHeader 
       header="Feel Well" 
       year="2024"
-      client="Deepa Gurnani"  
+      client="Jay Lakhani"  
       service="UIUX Revamp, Website Development  "
       industry=" Jewellery"
       />
