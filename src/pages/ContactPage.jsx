@@ -46,9 +46,11 @@ const ContactPage = () => {
   };
 
   const socialLinks = [
-    { name: 'Instagram', url: 'https://instagram.com' },
+    { name: 'Instagram', url: 'https://www.instagram.com/bamboodigital.mate/' },
     { name: 'Facebook', url: 'https://facebook.com' },
-    { name: 'Youtube', url: 'https://youtube.com' },
+    { name: 'Youtube', url: 'https://www.linkedin.com/company/bamboo-digital-mate/ '},
+    { name: 'Linkedin', url: 'https://www.linkedin.com/company/bamboo-digital-mate/ '},
+
   ];
 
   const handleInputChange = (e) => {
