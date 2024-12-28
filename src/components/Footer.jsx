@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react'
 const Footer = () => {
   const mainLinks = ['Work','Contact']
   const socialLinks = [
-    { name: 'Instagram', url: 'https://instagram.com/your_username' },
+    { name: 'Instagram', url: 'https://www.instagram.com/bamboodigital.mate/' },
     { name: 'Facebook', url: 'https://facebook.com/your_page' },
     { name: 'Linkedin', url: 'https://www.linkedin.com/company/bamboo-digital-mate/ '},
     { name: 'YouTube', url: 'https://youtube.com/your_channel' },

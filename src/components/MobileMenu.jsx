@@ -35,7 +35,12 @@ const MobileMenu = ({ isOpen, onClose }) => {
   };
 
   const menuItems = ['Work','Contact'];
-  const socialItems = ['Instagram', 'Facebook','Linkedin', 'Youtube',];
+  const socialItems = [
+    { name: 'Instagram', url: 'https://www.instagram.com/bamboodigital.mate/' },
+    { name: 'Facebook', url: 'https://facebook.com/your_page' },
+    { name: 'Linkedin', url: 'https://www.linkedin.com/company/bamboo-digital-mate/ '},
+    { name: 'YouTube', url: 'https://youtube.com/your_channel' },
+  ];
 
   return (
     <motion.div
@@ -85,7 +90,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
           {socialItems.map((item, i) => (
             <motion.a
               key={item}
-              href={`https://${item.toLowerCase()}.com`}
+              href={social.url}
               target="_blank"
               rel="noopener noreferrer"
               custom={menuItems.length + 2 + i}
