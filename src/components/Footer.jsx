@@ -11,7 +11,7 @@ const Footer = () => {
     { name: 'YouTube', url: 'https://youtube.com/your_channel' },
   ];
   
-  const bottomLinks = ['More Template', 'Licenses', 'Changelog', 'Style Guide', 'Webflow']
+  
 
   return (
     <footer className="bg-white pt-4 md:pt-40">
