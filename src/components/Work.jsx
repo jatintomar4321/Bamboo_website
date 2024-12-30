@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
@@ -59,6 +57,28 @@ const itemVariants = {
   }
 }
 
+const LazyImage = ({ src, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false)
+  const imgRef = useRef(null)
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      setIsLoaded(true)
+    }
+  }, [])
+
+  return (
+    <img
+      ref={imgRef}
+      src={src}
+      alt={alt}
+      className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+      onLoad={() => setIsLoaded(true)}
+      loading="lazy"
+    />
+  )
+}
+
 const Work = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -101,12 +121,12 @@ const Work = () => {
               (2014-2024)
             </motion.span>
             <motion.div variants={itemVariants}>
-            <Link 
-              to="/work"
-              className="text-sm underline hover:opacity-70 transition-opacity"
-            >
-              View All
-            </Link>
+              <Link 
+                to="/work"
+                className="text-sm underline hover:opacity-70 transition-opacity"
+              >
+                View All
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -128,16 +148,16 @@ const Work = () => {
               className="group"
             >
               <Link to={project.route}>
-                              <div className="relative overflow-hidden mb-4">
-                                <img
-                                  src={project.image}
-                                  alt={project.title}
-                                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                                />
-                              </div>
-                              <h3 className="text-xl font-light">{project.title}</h3>
-                              <p className="text-sm text-gray-600">{project.category}</p>
-               </Link>
+                <div className="relative overflow-hidden mb-4 aspect-w-16 aspect-h-9">
+                  <LazyImage
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-xl font-light">{project.title}</h3>
+                <p className="text-sm text-gray-600">{project.category}</p>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -149,25 +169,25 @@ const Work = () => {
             variants={containerVariants}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6"
           >
-             {secondRowProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={itemVariants}
-              className="group"
-            >
-              <Link to={project.route}>
-                              <div className="relative overflow-hidden mb-4">
-                                <img
-                                  src={project.image}
-                                  alt={project.title}
-                                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                                />
-                              </div>
-                              <h3 className="text-xl font-light">{project.title}</h3>
-                              <p className="text-sm text-gray-600">{project.category}</p>
-               </Link>
-            </motion.div>
-          ))}
+            {secondRowProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={itemVariants}
+                className="group"
+              >
+                <Link to={project.route}>
+                  <div className="relative overflow-hidden mb-4 aspect-w-16 aspect-h-9">
+                    <LazyImage
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="text-xl font-light">{project.title}</h3>
+                  <p className="text-sm text-gray-600">{project.category}</p>
+                </Link>
+              </motion.div>
+            ))}
           </motion.div>
         )}
       </motion.div>
@@ -176,3 +196,4 @@ const Work = () => {
 }
 
 export default Work
+
