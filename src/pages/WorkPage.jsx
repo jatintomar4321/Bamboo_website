@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
-import { motion, useAnimation, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const projects = [
   {
@@ -127,21 +125,6 @@ const projects = [
   },
 ]
 
-const ImageContainer = ({ children }) => {
-  const controls = useAnimation()
-
-  return (
-    <motion.div
-      className="relative overflow-hidden mb-4"
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring",ease: "easeInOut", stiffness: 200,duration:500, damping: 30 }}
-      animate={controls}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
 const WorkPage = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -196,18 +179,16 @@ const WorkPage = () => {
             <motion.div
               key={project.id}
               variants={itemVariants}
+              className="group"
             >
               <Link to={project.route}>
-                <ImageContainer>
-                  <LazyLoadImage
+                <div className="relative overflow-hidden mb-4">
+                  <img
                     src={project.image}
                     alt={project.title}
-                    effect="blur"
-                    wrapperClassName="w-full h-full"
-                    className="w-full h-full object-cover"
-                    placeholderSrc="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
-                </ImageContainer>
+                </div>
                 <h3 className="text-xl font-light">{project.title}</h3>
                 <p className="text-sm text-gray-600">{project.category}</p>
               </Link>
