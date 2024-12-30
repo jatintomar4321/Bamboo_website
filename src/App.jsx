@@ -62,6 +62,7 @@ const AppContent = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="flex-grow"
+        style={{ display: isLoading ? "none" : "block" }}
       >
         <Nav />
         <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
