@@ -64,7 +64,7 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/send-email', {
+      const response = await axios.post('http://localhost:8000/send-email-bamboo', {
         name: formData.name,
         email: formData.email,
         message: formData.message
