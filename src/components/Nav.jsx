@@ -98,6 +98,7 @@ const Nav = () => {
             <button onClick={() => setIsMenuOpen(true)} className={`md:hidden ${navItemClass}`} aria-label="Open menu">
               <Menu size={24} />
             </button>
+          </div>
 
           <div className="flex items-center gap-4">
             <Link to="/contact" className={`hidden md:block ${navItemClass}`}>
