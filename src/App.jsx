@@ -1,12 +1,13 @@
-import React, { useEffect, useState, lazy, Suspense } from "react";
-import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import React, { lazy, Suspense, useEffect, useState } from "react";
+import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import SvgShuffleLoader from "./pages/SvgShuffleLoader";
 
 // Lazy loading for pages
 const ContactPage = lazy(() => import("./pages/ContactPage"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
 const DeepaGurnani = lazy(() => import("./pages/DeepaGurnani"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const WorkPage = lazy(() => import("./pages/WorkPage"));
