@@ -7,7 +7,6 @@ import SvgShuffleLoader from "./pages/SvgShuffleLoader";
 
 // Lazy loading for pages
 const ContactPage = lazy(() => import("./pages/ContactPage"));
-const AboutUs = lazy(() => import("./pages/AboutUs"));
 const DeepaGurnani = lazy(() => import("./pages/DeepaGurnani"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const WorkPage = lazy(() => import("./pages/WorkPage"));
