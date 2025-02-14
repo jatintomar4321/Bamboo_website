@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { ArrowUpRight } from 'lucide-react';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { ArrowUpRight } from "lucide-react";
 
 const ContactPage = () => {
   const [ref, inView] = useInView({
@@ -11,12 +11,12 @@ const ContactPage = () => {
   });
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const [successMessage, setSuccessMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,37 +46,46 @@ const ContactPage = () => {
   };
 
   const socialLinks = [
-    { name: 'Instagram', url: 'https://www.instagram.com/bamboodigital.mate/' },
-    { name: 'Facebook', url: 'https://facebook.com' },
-    { name: 'Youtube', url: 'https://www.linkedin.com/company/bamboo-digital-mate/ '},
-    { name: 'Linkedin', url: 'https://www.linkedin.com/company/bamboo-digital-mate/ '},
-
+    { name: "Instagram", url: "https://www.instagram.com/bamboodigital.mate/" },
+    { name: "Facebook", url: "https://facebook.com" },
+    {
+      name: "Youtube",
+      url: "https://www.linkedin.com/company/bamboo-digital-mate/ ",
+    },
+    {
+      name: "Linkedin",
+      url: "https://www.linkedin.com/company/bamboo-digital-mate/ ",
+    },
   ];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-<<<<<<< HEAD
-      const response = await axios.post('http://localhost:8000/send-email-bamboo', {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message
-      });
+      const response = await axios.post(
+        "https://api.bamboodigital.in/bamboo/send-email",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }
+      );
       if (response.status === 200) {
-        setSuccessMessage('Email sent successfully. Thank you for contacting us!');
-        setFormData({ name: '', email: '', message: '' });
+        setSuccessMessage(
+          "Email sent successfully. Thank you for contacting us!"
+        );
+        setFormData({ name: "", email: "", message: "" });
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setSuccessMessage('An error occurred. Please try again.');
+      console.error("Error submitting form:", error);
+      setSuccessMessage("An error occurred. Please try again.");
     }
   };
 
@@ -91,134 +100,129 @@ const ContactPage = () => {
       <motion.div
         ref={ref}
         initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
+        animate={inView ? "visible" : "hidden"}
         variants={containerVariants}
         className="grid lg:grid-cols-2 sm:grid-cols-1 gap-5 lg:gap-5"
       >
-            {/* Left Column - Contact Information */}
-            <motion.div
-              variants={itemVariants}
-              className="md:p-6 p-6 lg:py-10 space-y-16"
-            >
-              {/* Social Links */}
-              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-                <h3 className="text-md">Social</h3>
-                <div className="space-y-1">
-                  {socialLinks.map((link) => (
-                    <a
-                      key={link.name}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between px-8 -mx-3 rounded-lg group transition-colors duration-300 hover:bg-black"
-                    >
-                      <span className="text-md group-hover:text-white transition-colors duration-300">
-                        {link.name}
-                      </span>
-                      <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Address */}
-              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-                <h3 className="text-md">Address</h3>
-                <div>
-                  <p>Office no. 108, </p>
-                  <p> 1st Floor, Wing-C,</p>
-                  <p>Trade World Premises</p> 
-                  <p>Cooperative Society Ltd,</p>
-                  <p> Kamla Mills Compound</p>
-                  <p>Kamla City, Senapati Bapat Marg,</p>
-                  <p> Lower Parel, Mumbai - 400013</p>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-                <h3 className="text-md">Say hi</h3>
+        {/* Left Column - Contact Information */}
+        <motion.div
+          variants={itemVariants}
+          className="md:p-6 p-6 lg:py-10 space-y-16"
+        >
+          {/* Social Links */}
+          <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
+            <h3 className="text-md">Social</h3>
+            <div className="space-y-1">
+              {socialLinks.map((link) => (
                 <a
-                  href="mailto:info@bamboodigital.in"
-                  className="text-lg hover:opacity-70 transition-opacity"
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between px-8 -mx-3 rounded-lg group transition-colors duration-300 hover:bg-black"
                 >
-                 info@bamboodigital.in
+                  <span className="text-md group-hover:text-white transition-colors duration-300">
+                    {link.name}
+                  </span>
+                  <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
                 </a>
-              </div>
-            </motion.div>
-            {/* Right Column - Contact Form or Success Message */}
-            <motion.div
-              variants={itemVariants}
-              className="p-4 sm:p-6 lg:py-10"
+              ))}
+            </div>
+          </div>
+
+          {/* Address */}
+          <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
+            <h3 className="text-md">Address</h3>
+            <div>
+              <p>Office no. 108, </p>
+              <p> 1st Floor, Wing-C,</p>
+              <p>Trade World Premises</p>
+              <p>Cooperative Society Ltd,</p>
+              <p> Kamla Mills Compound</p>
+              <p>Kamla City, Senapati Bapat Marg,</p>
+              <p> Lower Parel, Mumbai - 400013</p>
+            </div>
+          </div>
+
+          {/* Email */}
+          <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
+            <h3 className="text-md">Say hi</h3>
+            <a
+              href="mailto:info@bamboodigital.in"
+              className="text-lg hover:opacity-70 transition-opacity"
             >
-              {successMessage ? (
-                <div className="bg-black text-white p-8 md:py-10 lg:py-16">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
-                    Let's collaborate and make wonderful stuff together!
-                  </h2>
-                  <div className="bg-white text-black p-6 text-center text-xl">
-                    {successMessage}
+              info@bamboodigital.in
+            </a>
+          </div>
+        </motion.div>
+        {/* Right Column - Contact Form or Success Message */}
+        <motion.div variants={itemVariants} className="p-4 sm:p-6 lg:py-10">
+          {successMessage ? (
+            <div className="bg-black text-white p-8 md:py-10 lg:py-16">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
+                Let's collaborate and make wonderful stuff together!
+              </h2>
+              <div className="bg-white text-black p-6 text-center text-xl">
+                {successMessage}
+              </div>
+            </div>
+          ) : (
+            <div className="bg-black text-white p-8 md:py-10 lg:py-16">
+              <form onSubmit={handleSubmit} className="space-y-12">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
+                  Let's collaborate and make wonderful stuff together!
+                </h2>
+                <div className="space-y-8">
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your Name"
+                      className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Your Email"
+                      className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Your message"
+                      rows={4}
+                      className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors resize-none"
+                      required
+                    />
                   </div>
                 </div>
-              ) : (
-                <div className="bg-black text-white p-8 md:py-10 lg:py-16">
-                  <form onSubmit={handleSubmit} className="space-y-12">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
-                      Let's collaborate and make wonderful stuff together!
-                    </h2>
-                    <div className="space-y-8">
-                      <div>
-                        <input
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="Your Name"
-                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
-                          required
-                        />
-                      </div>
 
-                      <div>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="Your Email"
-                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
-                          required
-                        />
-                      </div>
-
-                      <div>
-                        <textarea
-                          name="message"
-                          value={formData.message}
-                          onChange={handleInputChange}
-                          placeholder="Your message"
-                          rows={4}
-                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors resize-none"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="inline-block text-lg border-b border-white pb-1 hover:opacity-70 transition-opacity"
-                    >
-                      Submit your message
-                    </button>
-                  </form>
-                </div>
-              )}
-            </motion.div>
-        
+                <button
+                  type="submit"
+                  className="inline-block text-lg border-b border-white pb-1 hover:opacity-70 transition-opacity"
+                >
+                  Submit your message
+                </button>
+              </form>
+            </div>
+          )}
+        </motion.div>
       </motion.div>
     </section>
   );
 };
 
 export default ContactPage;
-
