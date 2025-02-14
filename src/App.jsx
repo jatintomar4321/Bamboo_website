@@ -7,6 +7,7 @@ import SvgShuffleLoader from "./pages/SvgShuffleLoader";
 
 // Lazy loading for pages
 const ContactPage = lazy(() => import("./pages/ContactPage"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
 const DeepaGurnani = lazy(() => import("./pages/DeepaGurnani"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const WorkPage = lazy(() => import("./pages/WorkPage"));
@@ -70,6 +71,7 @@ const AppContent = () => {
         <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route path="/work" element={<WorkPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/work/deepa-gurnani" element={<DeepaGurnani />} />

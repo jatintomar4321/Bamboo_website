@@ -1,0 +1,21 @@
+.paragraph{
+    display: flex;
+    line-height: 0.7;
+    padding: 4px;
+    max-width: 50rem;
+    color: rgb(0, 0, 0);
+    flex-wrap: wrap;
+    align-items: start;
+    
+    
+    .word{
+      position: relative;
+      margin-right: 12px;
+      margin-top: 12px;
+      .shadow{
+        position: absolute;
+        opacity: 20%;
+      }
+    }
+    
+  }
