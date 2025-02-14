@@ -81,7 +81,7 @@ export default function ScrollZoomAnimation() {
 
     const img = new Image()
     img.onload = initAnimation
-    img.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2874.JPG-NqZkOPNOWCPIMUUPyrJiGYcG3Mau0t.jpeg"
+    img.src = "/IMG_2874.JPG"
 
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill())
@@ -97,7 +97,7 @@ export default function ScrollZoomAnimation() {
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
         style={{
-          backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2874.JPG-NqZkOPNOWCPIMUUPyrJiGYcG3Mau0t.jpeg')`,
+          backgroundImage: `url('/IMG_2874.JPG')`,
         }}
       />
       <div ref={rightNameRef} className="absolute top-16 right-7 text-white bg-black bg-opacity-70 p-4 rounded-md">
