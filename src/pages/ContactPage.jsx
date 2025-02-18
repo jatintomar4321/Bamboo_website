@@ -3,6 +3,7 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowUpRight } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 
 const ContactPage = () => {
   const [ref, inView] = useInView({
@@ -98,7 +99,7 @@ const ContactPage = () => {
             {/* Left Column - Contact Information */}
             <motion.div
               variants={itemVariants}
-              className="md:p-6 p-6 lg:py-10 space-y-16"
+              className="md:p-6 p-6 lg:py-10 space-y-14"
             >
               {/* Social Links */}
               <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
@@ -144,6 +145,37 @@ const ContactPage = () => {
                 >
                  info@bamboodigital.in
                 </a>
+                
+              </div>
+              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-5 w-full lg:w-[25rem]">
+              <h3 className="text-md">Let's talk business!</h3>
+                <a
+                  href="https://wa.me/919619280763"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg flex items-center gap-2 hover:opacity-70 transition-opacity group relative"
+                >
+                  <FaWhatsapp className="text-green-500" />
+                  +91 96192 80763
+                  <span className="absolute -top-6 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click me
+                  </span>
+                </a> 
+              </div>
+              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-5 w-full lg:w-[25rem]">
+              <h3 className="text-md">Want to work with us?</h3>
+                <a
+                  href="https://wa.me/919167158202"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg flex items-center gap-2 hover:opacity-70 transition-opacity group relative"
+                >
+                  <FaWhatsapp className="text-green-500" />
+                  +91 91 671 582 02
+                  <span className="absolute -top-6 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click me
+                  </span>
+                </a> 
               </div>
             </motion.div>
             {/* Right Column - Contact Form or Success Message */}

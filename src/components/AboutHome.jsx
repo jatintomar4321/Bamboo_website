@@ -4,8 +4,6 @@ import { motion } from 'framer-motion';
 function AboutHome() {
   
 
- 
-
   return (
     <motion.div 
       className="min-h-[100dvh] flex items-center"
@@ -33,7 +31,7 @@ function AboutHome() {
             <motion.p 
               className="text-[clamp(1.45rem,4vw,2.7rem)] leading-[1.1] text-gray-900 max-w-full"
             >
-              Our team is made up of talented and passionate individuals who are dedicated to pushing the boundaries of creativity. We specialize in providing innovative solutions for all your design, branding, and marketing needs. Whether you are a small startup looking to make a big impact or an established business aiming to reinvent your brand, our agency is here to help you bring your vision to life
+              Bamboo Digital’s journey began in 2022 with two ambitious leaders—Shruti Mohan and Rishabh Suman Kapoor—who envisioned an agency that bridges the gap between creativity and results-driven strategy. What started as an idea over brainstorming sessions has now become a trusted name for brands looking to elevate their marketing and design
             </motion.p>
           </div>
         </div>
