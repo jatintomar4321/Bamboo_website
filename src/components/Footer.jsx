@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 
 const Footer = () => {
-  const mainLinks = ['Work','Contact']
+  const mainLinks = ['Work','Contact','About']
   const socialLinks = [
     { name: 'Instagram', url: 'https://www.instagram.com/bamboodigital.mate/' },
     { name: 'Facebook', url: 'https://facebook.com/your_page' },

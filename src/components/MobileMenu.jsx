@@ -34,7 +34,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
     }),
   };
 
-  const menuItems = ['Work','Contact'];
+  const menuItems = ['Work','Contact','about'];
   const socialItems = ['Instagram', 'Facebook','Linkedin', 'Youtube',];
 
   return (

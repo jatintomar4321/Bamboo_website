@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -72,10 +73,12 @@ We are a team of creative professionals dedicated to helping businesses thrive i
 
             <motion.a
               variants={itemVariants}
-              href="/about"
+
               className="inline-block text-lg md:text-xl font-light border-b border-black pb-1 hover:opacity-70 transition-opacity"
             >
+            <Link to= '/about'>
               More About Us
+              </Link>
             </motion.a>
           </div>
         </div>

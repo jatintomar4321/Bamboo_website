@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { ArrowUpRight } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { ArrowUpRight } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const ContactPage = () => {
   const [ref, inView] = useInView({
@@ -69,6 +71,7 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+
       const response = await axios.post(
         "https://api.bamboodigital.in/bamboo/send-email",
         {
@@ -77,6 +80,7 @@ const ContactPage = () => {
           message: formData.message,
         }
       );
+
       if (response.status === 200) {
         setSuccessMessage(
           "Email sent successfully. Thank you for contacting us!"
@@ -104,16 +108,48 @@ const ContactPage = () => {
         variants={containerVariants}
         className="grid lg:grid-cols-2 sm:grid-cols-1 gap-5 lg:gap-5"
       >
-        {/* Left Column - Contact Information */}
-        <motion.div
-          variants={itemVariants}
-          className="md:p-6 p-6 lg:py-10 space-y-16"
-        >
-          {/* Social Links */}
-          <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-            <h3 className="text-md">Social</h3>
-            <div className="space-y-1">
-              {socialLinks.map((link) => (
+            {/* Left Column - Contact Information */}
+            <motion.div
+              variants={itemVariants}
+              className="md:p-6 p-6 lg:py-10 space-y-14"
+            >
+              {/* Social Links */}
+              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
+                <h3 className="text-md">Social</h3>
+                <div className="space-y-1">
+                  {socialLinks.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between px-8 -mx-3 rounded-lg group transition-colors duration-300 hover:bg-black"
+                    >
+                      <span className="text-md group-hover:text-white transition-colors duration-300">
+                        {link.name}
+                      </span>
+                      <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
+                <h3 className="text-md">Address</h3>
+                <div>
+                  <p>Office no. 108, </p>
+                  <p> 1st Floor, Wing-C,</p>
+                  <p>Trade World Premises</p> 
+                  <p>Cooperative Society Ltd,</p>
+                  <p> Kamla Mills Compound</p>
+                  <p>Kamla City, Senapati Bapat Marg,</p>
+                  <p> Lower Parel, Mumbai - 400013</p>
+                </div>
+              </div>
+              {/* Email */}
+              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
+                <h3 className="text-md">Say hi</h3>
                 <a
                   key={link.name}
                   href={link.url}
@@ -126,30 +162,43 @@ const ContactPage = () => {
                   </span>
                   <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
                 </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Address */}
-          <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-            <h3 className="text-md">Address</h3>
-            <div>
-              <p>Office no. 108, </p>
-              <p> 1st Floor, Wing-C,</p>
-              <p>Trade World Premises</p>
-              <p>Cooperative Society Ltd,</p>
-              <p> Kamla Mills Compound</p>
-              <p>Kamla City, Senapati Bapat Marg,</p>
-              <p> Lower Parel, Mumbai - 400013</p>
-            </div>
-          </div>
-
-          {/* Email */}
-          <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-10 w-full lg:w-[25rem]">
-            <h3 className="text-md">Say hi</h3>
-            <a
-              href="mailto:info@bamboodigital.in"
-              className="text-lg hover:opacity-70 transition-opacity"
+     
+              </div>
+              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-5 w-full lg:w-[25rem]">
+              <h3 className="text-md">Let's talk business!</h3>
+                <a
+                  href="https://wa.me/919619280763"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg flex items-center gap-2 hover:opacity-70 transition-opacity group relative"
+                >
+                  <FaWhatsapp className="text-green-500" />
+                  +91 96192 80763
+                  <span className="absolute -top-6 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click me
+                  </span>
+                </a> 
+              </div>
+              <div className="flex flex-col lg:flex-row justify-between border-b-2 pb-5 w-full lg:w-[25rem]">
+              <h3 className="text-md">Want to work with us?</h3>
+                <a
+                  href="https://wa.me/919167158202"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg flex items-center gap-2 hover:opacity-70 transition-opacity group relative"
+                >
+                  <FaWhatsapp className="text-green-500" />
+                  +91 91 671 582 02
+                  <span className="absolute -top-6 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click me
+                  </span>
+                </a> 
+              </div>
+            </motion.div>
+            {/* Right Column - Contact Form or Success Message */}
+            <motion.div
+              variants={itemVariants}
+              className="p-4 sm:p-6 lg:py-10"
             >
               info@bamboodigital.in
             </a>
